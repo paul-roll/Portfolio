@@ -268,4 +268,43 @@ h1 {
   font-size: 50px;
 }
 
+/* line 17, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.test {
+  background-color: #555;
+}
+
+/* line 21, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.wrapper {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  /* line 21, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .wrapper {
+    max-width: 562px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 21, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .wrapper {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 21, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .wrapper {
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 21, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .wrapper {
+    max-width: 1150px;
+  }
+}
+
 /*# sourceMappingURL=stylesheet.css.map */

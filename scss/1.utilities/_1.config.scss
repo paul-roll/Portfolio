@@ -7,3 +7,8 @@ $breakpoint-xs    : 576px;
 $breakpoint-sm    : 768px;
 $breakpoint-md    : 992px;
 $breakpoint-lg    : 1200px;
+// Margins      // Used with wrapper to keep content within bounds
+$wrapper-xs       : $breakpoint-xs - 14px;    
+$wrapper-sm       : $breakpoint-sm - 18px;      
+$wrapper-md       : $breakpoint-md - 22px;
+$wrapper-lg       : $breakpoint-lg - 50px;
