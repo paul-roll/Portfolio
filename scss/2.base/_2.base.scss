@@ -37,8 +37,16 @@ hr {
 a {
     text-decoration: none;
     color: black;
+    img {
+        border-radius: 50%;
+        border: 1px solid white;
+    }
     &:hover {
         text-decoration: underline;
+        &.github img {
+            background-color: white;
+            filter: invert(1);
+        }
     }
 }
 
