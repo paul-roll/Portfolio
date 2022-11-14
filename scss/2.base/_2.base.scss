@@ -14,8 +14,21 @@ h1 {
     font-size: 50px;
 }
 
+.banner {
+    background-image: url(../img/banner.avif);
+    background-size: cover;
+    text-align: center;
+    .flex-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
 .test {
-    background-color: #555;
+    background-color: #666;
 }
 
 .wrapper {
