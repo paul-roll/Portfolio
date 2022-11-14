@@ -8,14 +8,13 @@
 html {
     //font-family: #TODO;
     // font-size: 1em; // 16px
-    color: white;
 }
 
 h1 {
     font-size: 2.4em;
     margin: 16px;
     @media (min-width: $breakpoint-xs) {
-        font-size: 4em;
+        font-size: 3.4em;
     }
 }
 p {
@@ -24,9 +23,44 @@ p {
 
 section {
     overflow: hidden;
+    @media (min-width: $breakpoint-xs) {    // placeholder until menu toggle is added
+        margin-left: 200px;
+    }
+}
+
+hr {
+    margin: 10px -15px;
+    width: calc(100% + 30px);
+    border: 1px solid black;
+}
+
+a {
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: white;
+    position: fixed;
+    overflow: hidden;
+    .flex-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+    }
 }
 
 .banner {
+    color: white;
     background-image: url(../img/banner.avif);
     background-size: cover;
     text-align: center;
