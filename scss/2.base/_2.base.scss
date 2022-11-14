@@ -35,12 +35,18 @@ hr {
 }
 
 a {
-    margin: 10px 0;
     text-decoration: none;
     color: black;
     &:hover {
         text-decoration: underline;
     }
+}
+
+.burger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .sidebar {
