@@ -93,12 +93,53 @@ a {
         }
     }    
 }
+
 .aboutme {
     background-color: #555;
 }
+
 .portfolio {
     background-color: #666;
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        $gap: 20px;
+        gap: $gap;
+
+        div {
+            // margin-top: 10px;
+            text-align: right;
+        }
+        img {
+            width: 100%;
+        }
+        h2 {
+            margin: 5px 0;
+        }
+        h3, p {
+            margin: 0;
+        }
+        h2 {
+            text-align: left;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            flex-flow: row wrap;
+            > div {
+                flex: 1 0;
+                min-width: calc(50% - (#{$gap} / 2)); // one gap 10px, two elements = 5px knocked off each
+            }
+        }
+        @media (min-width: $breakpoint-lg) {
+            > div {
+                min-width: calc(33% - ((#{$gap} * 2) / 3));
+            }
+        }
+    }
+
 }
+
+
 .examples {
     background-color: #777;
 }
