@@ -17,9 +17,6 @@ h1 {
         font-size: 3.4em;
     }
 }
-p {
-    font-weight: bold;
-}
 
 section {
     overflow: hidden;
@@ -93,11 +90,29 @@ a {
         }
     }    
 }
+.aboutme {
+    background-color: #555;
+}
 .portfolio {
     background-color: #666;
 }
+.examples {
+    background-color: #777;
+}
+.scs {
+    background-color: #888;
+    h2 {
+        margin-top: 40px;
+    }
+    p {
+        margin-left: 40px;
+    }
+    ul {
+        list-style: none;
+    }
+}
 .contact {
-    background-color: #444;
+    background-color: #999;
 }
 .footer {
     background-color: #345678;
@@ -106,8 +121,13 @@ a {
 }
 
 .btn {
+    border: 1px solid black;
+    background-color: rgba(black, 0.1);
+    padding: 5px 10px;
     display: inline-block;
     &:hover {
+        border-color: transparent;
+        background-color: transparent;
         color: white;
         background-color: rgba(black, 0.75);
         box-shadow: 0 0 10px 10px rgba(black, 0.75);
