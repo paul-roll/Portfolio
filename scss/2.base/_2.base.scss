@@ -8,6 +8,7 @@
 html {
     //font-family: #TODO;
     // font-size: 1em; // 16px
+    scroll-behavior: smooth;
 }
 
 h1 {
@@ -58,10 +59,10 @@ a {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #345678;
     position: fixed;
     overflow: hidden;
     height: 100%;
+    background-color: #345678;
     .flex-container {
         display: flex;
         flex-direction: column;
@@ -202,23 +203,9 @@ a {
 }
 
 .btn {
+    @extend .btn-nb;
     border: 1px solid black;
     background-color: rgba(black, 0.1);
-    padding: 5px 10px;
-    display: inline-block;
-    &:hover {
-        border-color: transparent;
-        background-color: transparent;
-        color: white;
-        background-color: rgba(black, 0.75);
-        box-shadow: 0 0 10px 10px rgba(black, 0.75);
-        i {
-            filter: invert(1);
-        }
-    }
-    h3 {
-        margin: 0;
-    }
 }
 .btn-nb { 
     padding: 5px 10px;
@@ -229,6 +216,9 @@ a {
         color: white;
         background-color: rgba(black, 0.75);
         box-shadow: 0 0 10px 10px rgba(black, 0.75);
+    }
+    h3 {
+        margin: 0;
     }
 }
 
