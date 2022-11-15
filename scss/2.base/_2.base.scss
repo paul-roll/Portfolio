@@ -37,13 +37,11 @@ hr {
 a {
     text-decoration: none;
     color: black;
-    img {
-        border-radius: 50%;
-        border: 1px solid white;
-    }
     &:hover {
         text-decoration: underline;
         &.github img {
+            border: 2px solid white;
+            border-radius: 50%;
             background-color: white;
             filter: invert(1);
         }
@@ -62,11 +60,11 @@ a {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: white;
+    background-color: #345678;
     position: fixed;
     overflow: hidden;
+    height: 100%;
     .flex-container {
-        height: 100%;
         display: flex;
         flex-direction: column;
         // justify-content: center;
@@ -88,13 +86,35 @@ a {
         > div {
             background-color: rgba(black, 0.75);
             box-shadow: 0 0 50px 50px rgba(black, 0.75);
+            margin-top: auto;
         }
-    }
-    
+        > a {
+            margin-top: auto;
+        }
+    }    
+}
+.portfolio {
+    background-color: #666;
+}
+.contact {
+    background-color: #444;
+}
+.footer {
+    background-color: #345678;
+    text-align: center;
+
 }
 
-.test {
-    background-color: #666;
+.btn {
+    display: inline-block;
+    &:hover {
+        color: white;
+        background-color: rgba(black, 0.75);
+        box-shadow: 0 0 10px 10px rgba(black, 0.75);
+    }
+    h3 {
+        margin: 0;
+    }
 }
 
 .wrapper {
