@@ -106,15 +106,8 @@ a {
         $gap: 20px;
         gap: $gap;
 
-        div {
-            // margin-top: 10px;
-            text-align: right;
-        }
         img {
             width: 100%;
-        }
-        h2 {
-            margin: 5px 0;
         }
         h3, p {
             margin: 0;
@@ -139,6 +132,9 @@ a {
 
 }
 
+.placeholder {
+    filter: brightness(0.25);
+}
 
 .examples {
     background-color: #777;
@@ -164,7 +160,7 @@ a {
         @media (min-width: $breakpoint-md) {
             flex-direction: row;
             > div {
-                max-width: 33%;
+                max-width: 38%;
             }
             > form {
                 height: 100%;
@@ -192,7 +188,13 @@ a {
     input[type=submit] {
         font-size: 1.2em;
     }
+    a:hover {
+        color: white;
+        text-decoration: none;
+    }
 }
+
+
 .footer {
     background-color: #345678;
     text-align: center;
