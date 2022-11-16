@@ -16,20 +16,18 @@ $wrapper-lg       : $breakpoint-lg - 50px - 200px;
 // Colors
 $color-white-1: darken(white,5%);
 $color-white-2: darken(white,10%);
-$color-white-3: darken(white,15%);
-$color-primary: skyblue;
-
+$color-primary: #87CEEB; // skyblue
 
 // Maps
 $background-colors: (
-    'sidebar':      $color-white-1,
+    'sidebar':      white,
     'banner':       grey,   // concealed
-    'aboutme':      $color-white-2,
-    'portfolio':    $color-white-3, 
-    'examples':     $color-white-2,
-    'scs':          $color-white-3,
-    'contact':      $color-white-2,
-    'footer':       $color-white-1,
+    'aboutme':      $color-white-1,
+    'portfolio':    $color-white-2, 
+    'examples':     $color-white-1,
+    'scs':          $color-white-2,
+    'contact':      $color-white-1,
+    'footer':       white,
 );
 
 $section-colors: (
