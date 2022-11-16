@@ -437,68 +437,94 @@ a:hover.github img {
   margin-top: auto;
 }
 
-/* line 119, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-.portfolio .flex-container {
+/* line 115, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.aboutme img {
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  /* line 119, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .aboutme p {
+    max-width: 50%;
+  }
+  /* line 122, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .aboutme img {
+    float: right;
+    max-width: 50%;
+    padding: 0 0 0 10px;
+    margin-top: -75px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 130, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .aboutme img {
+    margin-top: -120px;
+  }
+}
+
+/* line 137, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.portfolio .flex-container, .examples .flex-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* line 125, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-.portfolio .flex-container img {
+/* line 143, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.portfolio .flex-container img, .examples .flex-container img {
   width: 100%;
 }
 
-/* line 128, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-.portfolio .flex-container h3, .portfolio .flex-container p {
+/* line 146, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.portfolio .flex-container h3, .portfolio .flex-container p, .examples .flex-container h3, .examples .flex-container p {
   margin: 0;
 }
 
-/* line 131, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-.portfolio .flex-container h2 {
+/* line 149, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+.portfolio .flex-container h2, .examples .flex-container h2 {
   text-align: left;
 }
 
 @media (min-width: 992px) {
-  /* line 119, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-  .portfolio .flex-container {
+  /* line 137, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .portfolio .flex-container, .examples .flex-container {
     flex-flow: row wrap;
   }
-  /* line 137, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-  .portfolio .flex-container > div {
+  /* line 155, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .portfolio .flex-container > div, .examples .flex-container > div {
     flex: 1 0;
     min-width: calc(50% - (20px / 2));
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 143, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
-  .portfolio .flex-container > div {
+  /* line 161, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  .portfolio .flex-container > div, .examples .flex-container > div {
     min-width: calc(33% - ((20px * 2) / 3));
   }
 }
 
-/* line 151, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 168, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .placeholder {
   filter: brightness(0.25);
 }
 
-/* line 159, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 173, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .scs h2 {
   margin-top: 40px;
 }
 
-/* line 162, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 176, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .scs p {
   margin-left: 40px;
 }
 
-/* line 165, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 179, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .scs ul {
   list-style: none;
 }
 
-/* line 170, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 184, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .contact .flex-container {
   display: flex;
   flex-direction: column;
@@ -506,156 +532,156 @@ a:hover.github img {
 }
 
 @media (min-width: 992px) {
-  /* line 170, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 184, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .contact .flex-container {
     flex-direction: row;
   }
-  /* line 176, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 190, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .contact .flex-container > div {
     max-width: 38%;
   }
-  /* line 179, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 193, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .contact .flex-container > form {
     height: 100%;
   }
 }
 
-/* line 184, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 198, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .contact form {
   display: flex;
   flex-flow: row wrap;
   gap: 10px;
 }
 
-/* line 188, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 202, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .contact form #first, .contact form #last, .contact form #email, .contact form #subject, .contact form #message {
   width: 100%;
 }
 
 @media (min-width: 576px) {
-  /* line 192, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 206, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .contact form #first, .contact form #last {
     flex: 1 0;
   }
 }
 
-/* line 197, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 211, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .contact input[type=text], .contact input[type=email] {
   height: 50px;
 }
 
-/* line 200, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 214, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .contact input[type=submit] {
   font-size: 1.2em;
 }
 
-/* line 203, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 217, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .contact a:hover {
   color: white;
   text-decoration: none;
 }
 
-/* line 209, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 223, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .footer {
   border-top: 2px solid skyblue;
   text-align: center;
 }
 
-/* line 215, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 229, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 219, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 233, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .wrapper {
   padding: 15px;
   margin: 0 auto;
 }
 
 @media (min-width: 576px) {
-  /* line 219, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 233, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .wrapper {
     max-width: 362px;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 219, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 233, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .wrapper {
     max-width: 550px;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 219, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 233, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .wrapper {
     max-width: 770px;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 219, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 233, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .wrapper {
     max-width: 950px;
   }
 }
 
-/* line 237, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+/* line 251, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 .hidden {
   display: none;
 }
 
 @media (min-width: 576px) {
-  /* line 241, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .hide-xs {
     display: none;
   }
 }
 
 @media (min-width: 576px) {
-  /* line 246, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 260, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .show-xs {
     display: initial;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 252, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 266, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .hide-sm {
     display: none;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 271, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .show-sm {
     display: initial;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 263, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 277, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .hide-md {
     display: none;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 268, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 282, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .show-md {
     display: initial;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 274, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 288, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .hide-lg {
     display: none;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 279, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
+  /* line 293, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
   .show-lg {
     display: initial;
   }
