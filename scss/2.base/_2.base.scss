@@ -3,6 +3,7 @@
 // ==========================================================================
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
 html {
@@ -11,8 +12,8 @@ html {
     scroll-behavior: smooth;
 }
 
-p {
-    font-family: 'Alegreya Sans', sans-serif;   // make Alegreya-Sans the default paragraph font for readability
+p, form {                                       // Adjust font for paragraph and form elements
+    font-family: 'Alegreya Sans', sans-serif;   // make Alegreya-Sans the default font for readability
 }
 
 h1 {
@@ -74,8 +75,12 @@ a {
     overflow: hidden;
     height: 100%;
     h1 {
+        transition: color 0.2s;
         color: $color-primary;
         text-shadow: -1px -1px lighten(black, 50%), 1px -1px lighten(black, 25%), -1px 1px lighten(black, 25%), 1px 1px black;
+        &:hover {
+            color: darken($color-primary, 20%);
+        }
     }
     .flex-container {
         display: flex;
@@ -144,10 +149,25 @@ a {
             width: 100%;
         }
         h3, p {
-            margin: 0;
+            margin: 0 10px;
         }
         h2 {
             text-align: left;
+        }
+
+        
+        > * { // flex items
+            position: relative;
+            transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
+            top: 0;
+            &:hover {
+                border: 1px solid $color-primary;
+                top: -10px;
+                scale: 105%;
+                transform: rotate(-1deg);
+                background-color: rgba($color-primary, 0.5);
+                box-shadow: 0 0 10px 5px $color-primary;
+            }
         }
 
         @media (min-width: $breakpoint-md) {
@@ -180,6 +200,24 @@ a {
         list-style: none;
     }
 }
+
+input[type="text"], input[type="email"], textarea {
+    padding-left: 10px;
+    transition: box-shadow 0.5s;
+    border-radius: 5px;
+    border: 1px solid black;
+    &:focus {
+        border-color: darken($color-primary, 20%);
+        box-shadow: 0 0 10px 5px $color-primary;
+    }
+    &:hover {
+        border-color: darken($color-primary, 20%);
+    }
+}
+textarea {
+    padding-top: 10px;
+}
+
 .contact {
     .flex-container {
         display: flex;
@@ -215,7 +253,7 @@ a {
         font-size: 1.2em;
     }
     a:hover {
-        color: white;
+        color: darken($color-primary, 20%);
         text-decoration: none;
     }
 }
