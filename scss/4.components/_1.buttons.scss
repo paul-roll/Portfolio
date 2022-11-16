@@ -81,11 +81,3 @@
         box-shadow: 0 0 10px 5px rgba($color-primary, 0.5);
     }
 }
-
-.btn-portfolio {
-    @extend %btn;
-    &:hover {
-        color: white;
-        background-color: rgba(black, 0.2);
-    } 
-}

@@ -12,7 +12,7 @@ html {
     scroll-behavior: smooth;
 }
 
-p, form {                                       // Adjust font for paragraph and form elements
+p, form, li {                                       // Adjust font for paragraph and form elements
     font-family: 'Alegreya Sans', sans-serif;   // make Alegreya-Sans the default font for readability
 }
 
@@ -95,7 +95,7 @@ a {
 .banner {
     border-bottom: 2px solid $color-primary;
     color: white;
-    background-image: url(../img/milad-fakurian-E8Ufcyxz514-unsplash.jpg);
+    background-image: url(../img/banner.jpg);
     background-size: cover;
     text-align: center;
     .flex-container {
@@ -155,22 +155,7 @@ a {
             text-align: left;
         }
 
-        
-        > * { // flex items
-            position: relative;
-            transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
-            top: 0;
-            &:hover {
-                border: 1px solid $color-primary;
-                top: -10px;
-                scale: 105%;
-                transform: rotate(-1deg);
-                background-color: rgba($color-primary, 0.5);
-                box-shadow: 0 0 10px 5px $color-primary;
-            }
-        }
-
-        @media (min-width: $breakpoint-md) {
+                @media (min-width: $breakpoint-md) {
             flex-flow: row wrap;
             > div {
                 flex: 1 0;
@@ -181,6 +166,33 @@ a {
             > div {
                 min-width: calc(33% - ((#{$gap} * 2) / 3));     // calculate the gap to remove to maintain 33%
             }
+        }
+    }
+}
+
+.portfolio .flex-container {
+    > * { // flex items
+        position: relative;
+        transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
+        top: 0;
+        &:hover {
+            border: 1px solid $color-primary;
+            top: -10px;
+            scale: 105%;
+            transform: rotate(-1deg);
+            background-color: rgba($color-primary, 0.5);
+            box-shadow: 0 0 10px 5px $color-primary;
+        }
+    }
+}
+
+.portfolio-card {
+    p {
+        padding: 5px 10px;
+    }
+    &:hover {
+        p {
+            text-decoration: underline;
         }
     }
 }
