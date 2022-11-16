@@ -1,0 +1,91 @@
+// ==========================================================================
+// Component - Buttons
+// ==========================================================================
+
+.btnx {
+    @extend .btn-nb;
+    border: 1px solid black;
+    background-color: rgba(black, 0.1);
+}
+
+.btn-nb { 
+    padding: 5px 10px;
+    display: inline-block;
+    &:hover {
+        border-color: transparent;
+        background-color: transparent;
+        color: white;
+        background-color: rgba(black, 0.75);
+        box-shadow: 0 0 10px 10px rgba(black, 0.75);
+    }
+    h3 {
+        margin: 0;
+    }
+}
+
+.btn {
+    padding: 5px 10px;
+    display: inline-block;
+    &:hover {
+        text-decoration: none;
+    }
+    h3 {
+        margin: 0;
+    }
+}
+
+.btn-basic {
+    @extend .btn;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(white, 0.2);
+    &:hover {
+        color: white;
+        background-color: rgba(black, 0.2);
+    }
+}
+
+.btn-burger {
+    @extend .btn;
+    background-color: rgba(white, 0.2);
+    &:hover {
+        background-color: rgba(black, 0.2);
+    }
+}
+
+.btn-nav {
+    @extend .btn;
+    border-radius: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:hover {
+        color: white;
+        background-color: rgba(black, 0.2);
+    }
+}
+
+.btn-banner {
+    @extend .btn;
+    background-color: rgba(black, 0.2);
+    &:hover {
+        color: black;
+        background-color: rgba(white, 0.2);
+    }
+}
+
+.btn-portfolio {
+    @extend .btn;
+    &:hover {
+        color: white;
+        background-color: rgba(black, 0.2);
+    } 
+}
+
+.btn-footer {
+    @extend .btn;
+    background-color: rgba(white, 0.2);
+    &:hover {
+        color: white;
+        background-color: rgba(black, 0.2);
+    }
+}

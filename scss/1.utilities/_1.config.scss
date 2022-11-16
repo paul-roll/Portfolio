@@ -12,3 +12,32 @@ $wrapper-xs       : $breakpoint-xs - 14px - 200px;
 $wrapper-sm       : $breakpoint-sm - 18px - 200px;      // remove 200px for nav here until i have a working menu toggle
 $wrapper-md       : $breakpoint-md - 22px - 200px;
 $wrapper-lg       : $breakpoint-lg - 50px - 200px;
+
+// Colors
+$color-white-1: darken(white,5%);
+$color-white-2: darken(white,10%);
+$color-white-3: darken(white,15%);
+
+
+// Maps
+$background-colors: (
+    'sidebar':      $color-white-1,
+    'banner':       grey,   // concealed
+    'aboutme':      $color-white-2,
+    'portfolio':    $color-white-3, 
+    'examples':     $color-white-2,
+    'scs':          $color-white-3,
+    'contact':      $color-white-2,
+    'footer':       $color-white-1,
+);
+
+$section-colors: (
+    'sidebar':      black,
+    'banner':       white,
+    'aboutme':      black,
+    'portfolio':    black,
+    'examples':     black,
+    'scs':          black,
+    'contact':      black,
+    'footer':       black,
+);
