@@ -40,14 +40,14 @@ section {
 hr {
     margin: 10px -15px;
     width: calc(100% + 30px);
-    border: 1px solid black;
+    border: 1px solid $color-primary;
 }
 
 a {
     text-decoration: none;
     color: black;
     &:hover {
-        &.github img {
+        &.github img {  
             border: 2px solid white;
             border-radius: 50%;
             background-color: white;
@@ -66,12 +66,17 @@ a {
 }
 
 .sidebar {
+    border-right: 2px solid $color-primary;
     margin: 0;
     padding: 0;
     width: 200px;
     position: fixed;
     overflow: hidden;
     height: 100%;
+    h1 {
+        color: $color-primary;
+        text-shadow: -1px -1px lighten(black, 50%), 1px -1px lighten(black, 25%), -1px 1px lighten(black, 25%), 1px 1px black;
+    }
     .flex-container {
         display: flex;
         flex-direction: column;
@@ -83,6 +88,7 @@ a {
 }
 
 .banner {
+    border-bottom: 2px solid $color-primary;
     color: white;
     background-image: url(../img/milad-fakurian-E8Ufcyxz514-unsplash.jpg);
     background-size: cover;
@@ -201,6 +207,7 @@ a {
 }
 
 .footer {
+    border-top: 2px solid $color-primary;
     text-align: center;
 
 }
@@ -238,7 +245,7 @@ a {
 }
 .show-xs {      // Show (inherit) at screen width 576+
     @media (min-width: $breakpoint-xs) {
-        display: inherit;
+        display: initial;
     } 
 }
 
@@ -249,7 +256,7 @@ a {
 }
 .show-sm {      // Show (inherit) at screen width 768+
     @media (min-width: $breakpoint-sm) {
-        display: inherit;
+        display: initial;
     } 
 }
 
@@ -260,7 +267,7 @@ a {
 }
 .show-md {      // Show (inherit) at screen width 992+
     @media (min-width: $breakpoint-md) {
-        display: inherit;
+        display: initial;
     } 
 }
 
@@ -271,6 +278,6 @@ a {
 }
 .show-lg {      // Show (inherit) at screen width 1260+
     @media (min-width: $breakpoint-lg) {
-        display: inherit;
+        display: initial;
     }   
 }

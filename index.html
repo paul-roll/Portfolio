@@ -23,7 +23,7 @@
       </div>
       <nav class="sidebar hidden show-xs">
         <div class="wrapper flex-container">
-          <a href="#top"><h1>PR</h1></a>
+          <a href="index.html#top"><h1>PR</h1></a>
           <hr>
           <a href="#aboutme"><p class="btn-nav">About Me</p></a>
           <a href="#portfolio"><p class="btn-nav">My Portfolio</p></a>
@@ -81,28 +81,13 @@
               </a>
             </div>
 
-            <div>
+            <div class="hidden show-md">
               <img class="placeholder" src="http://placeimg.com/640/360/tech/sepia/1">
               <h3>Coming Soon</h3>
             </div>
 
-            <div>
-              <img class="placeholder" src="http://placeimg.com/640/360/tech/sepia/2">
-              <h3>Coming Soon</h3>
-            </div>
-
-            <div>
-              <img class="placeholder" src="http://placeimg.com/640/360/tech/sepia/3">
-              <h3>Coming Soon</h3>
-            </div>
-
-            <div>
-              <img class="placeholder" src="http://placeimg.com/640/360/tech/sepia/4">
-              <h3>Coming Soon</h3>
-            </div>
-
-            <div>
-              <img class="placeholder" src="http://placeimg.com/640/360/tech/sepia/5">
+            <div class="hidden show-lg">
+              <img class="placeholderd" src="http://placeimg.com/640/360/tech/sepia/2">
               <h3>Coming Soon</h3>
             </div>
 
@@ -141,23 +126,25 @@
       </section>
 
       <section class="contact">
-        <div class="wrapper flex-container">
+        <div class="wrapper">
           <a name="contact"></a>
-          <div class="">
-            <h3>Get In Touch</h3>
-            <p>Feel free to contact me by telephone or email and I will be sure to get back to you as soon as possible.</p>
-            <p>Tel: <a href="tel:07884441688"><span class="bold">0788 444 1688</span></p></a>
-            <p>Email: <a href="mailto: paul.roll@netmatters-scs.com"><span class="bold">paul.roll@netmatters-scs.com</span></p></a>
-            <p>Phasellus cursus urna in neque faucibus, eu dapibus magna vehicula. Sed tempus cursus mauris et scelerisque. Pellentesque ornare mi at fringilla egestas.</p>
+          <div class="flex-container">
+            <div>
+              <h3>Get In Touch</h3>
+              <p>Feel free to contact me by telephone or email and I will be sure to get back to you as soon as possible.</p>
+              <p>Tel: <a href="tel:07884441688"><span class="bold">0788 444 1688</span></p></a>
+              <p>Email: <a href="mailto: paul.roll@netmatters-scs.com"><span class="bold">paul.roll@netmatters-scs.com</span></p></a>
+              <p>Phasellus cursus urna in neque faucibus, eu dapibus magna vehicula. Sed tempus cursus mauris et scelerisque. Pellentesque ornare mi at fringilla egestas.</p>
+            </div>
+            <form>
+              <input id="first" type="text" placeholder="First Name*">
+              <input id="last" type="text" placeholder="Last Name*">
+              <input id="email" type="email" placeholder="Email Address*">
+              <input id="subject" type="text" placeholder="Subject">
+              <textarea rows="5" id="message" placeholder="Message"></textarea>
+              <input class="btn-basic bold" type="submit" value="Submit">
+            </form>
           </div>
-          <form>
-            <input id="first" type="text" placeholder="First Name*">
-            <input id="last" type="text" placeholder="Last Name*">
-            <input id="email" type="email" placeholder="Email Address*">
-            <input id="subject" type="text" placeholder="Subject">
-            <textarea rows="5" id="message" placeholder="Message"></textarea>
-            <input class="btn-basic bold" type="submit" value="Submit">
-          </form>
         </div>
       </section>
 
