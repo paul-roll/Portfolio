@@ -161,8 +161,12 @@ section {
         top: 15px;
         left: 15px;
     }
-    .score::after {
+    .treehouse-score::after {
         content: '#{$treehouse-score}';
+        
+    }
+    a:hover {
+        color: darken($color-primary, 20%);
     }
 }
 
@@ -207,7 +211,6 @@ section {
     }
     a:hover {
         color: darken($color-primary, 20%);
-        text-decoration: none;
     }
 }
 
