@@ -36,29 +36,31 @@
 
 .btn-basic {
     @extend %btn;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, box-shadow 0.5s;
     border: 1px solid black;
     border-radius: 5px;
     background-color: lighten($color-primary, 10%);
     &:hover {
         color: white;
-        background-color: darken($color-primary, 10%);
+        background-color: darken($color-primary, 20%);
+        box-shadow: 0 0 10px 5px $color-primary;
     }
 }
 
 .btn-burger {
     @extend %btn;
+    transition: background-color 0.2s, box-shadow 0.5s;
     background-color: rgba(white, 0.2);
     &:hover {
         color: white;
-        // background-color: rgba(black, 0.2);
         background-color: rgba(darken($color-primary, 20%), 0.5);
+        box-shadow: 0 0 10px 5px rgba(darken($color-primary, 20%), 0.5);
     }
 }
 
 .btn-nav {
     @extend %btn;
-    transition: box-shadow 0.5s, background-color 0.2s;
+    transition: background-color 0.2s, box-shadow 0.5s;
     border-radius: 50%;
     padding-left: 20px;
     padding-right: 20px;
@@ -69,15 +71,24 @@
     }
 }
 
-.btn-banner, .btn-footer {
+.btn-banner {
     @extend %btn;
     transition: background-color 0.2s, box-shadow 0.5s;
-    // background-color: rgba(black, 0.2);
     background-color: transparent;
     &:hover {
         color: black;
-        // background-color: rgba(white, 0.2);
         background-color: rgba($color-primary, 0.5);
         box-shadow: 0 0 10px 5px rgba($color-primary, 0.5);
     }
 }
+
+.btn-footer {
+    @extend %btn;
+    transition: background-color 0.2s, box-shadow 0.5s;
+    &:hover {
+        color: white;
+        background-color: darken($color-primary, 10%);
+        box-shadow: 0 0 10px 5px $color-primary;
+    }
+}
+
