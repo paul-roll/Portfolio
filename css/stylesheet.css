@@ -762,48 +762,47 @@ textarea {
 .btn-basic:hover, .btn-burger:hover, .btn-nav:hover, .btn-banner:hover, .btn-footer:hover {
   text-decoration: none;
   color: white;
+  box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 13, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 14, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic h3, .btn-burger h3, .btn-nav h3, .btn-banner h3, .btn-footer h3 {
   margin: 0;
 }
 
-/* line 18, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 19, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic {
   border: 1px solid black;
   border-radius: 5px;
   background-color: #b3e0f2;
 }
 
-/* line 23, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 24, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic:hover {
   background-color: #30aadc;
-  box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 29, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 30, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-burger {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 32, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 33, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-burger:hover {
   background-color: rgba(48, 170, 220, 0.5);
   box-shadow: 0 0 10px 5px rgba(48, 170, 220, 0.5);
 }
 
-/* line 38, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 39, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-nav {
   border-radius: 50%;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 43, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 44, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-nav:hover {
   background-color: #30aadc;
-  box-shadow: 0 0 10px 5px #87CEEB;
 }
 
 /* line 49, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
@@ -821,7 +820,6 @@ textarea {
 /* line 61, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-footer:hover {
   background-color: #5bbce4;
-  box-shadow: 0 0 10px 5px #87CEEB;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
