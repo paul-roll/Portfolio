@@ -1,0 +1,235 @@
+// ==========================================================================
+// Sections Layout
+// ==========================================================================
+
+section {
+    overflow: hidden;
+    @media (min-width: $breakpoint-xs) {    // placeholder until menu toggle is added
+        margin-left: 200px;
+    }
+}
+
+@each $section, $color in $background-colors {
+    .#{$section} {
+        background-color: $color;
+        color: map-get($section-colors, $section);
+    }
+}
+
+
+// ==========================================================================
+// Banner Layout
+// ==========================================================================
+
+.banner {
+    border-bottom: 2px solid $color-primary;
+    color: white;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    text-align: center;
+    .flex-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        > div {
+            // background-color: rgba(black, 0.5);
+            // box-shadow: 0 0 40px 50px rgba(black, 0.5);
+            margin-top: auto;
+            text-shadow: -1px -1px lighten(black, 50%), 1px -1px lighten(black, 25%), -1px 1px lighten(black, 25%), 1px 1px black;
+        }
+        > a {
+            color: white;
+            margin-top: auto;
+        }
+    }    
+}
+
+
+// ==========================================================================
+// About Me Layout
+// ==========================================================================
+
+.aboutme {
+    img {
+        max-width: 100%;
+    }
+    @media (min-width: $breakpoint-md) {
+        p {
+            max-width: 50%;
+        }
+        img {
+            float: right;
+            max-width: 50%;
+            margin: -75px 0 0 10px;
+        }
+    }
+    @media (min-width: $breakpoint-lg) {
+        img {
+            margin-top: -120px;
+        }
+    }
+}
+
+
+// ==========================================================================
+// Portfolio & Examples Layout
+// ==========================================================================
+
+.portfolio, .examples {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        $gap: 20px;
+        gap: $gap;
+
+        img {
+            width: 100%;
+        }
+        h3, p {
+            margin: 0 10px;
+        }
+        h2 {
+            text-align: left;
+        }
+
+                @media (min-width: $breakpoint-md) {
+            flex-flow: row wrap;
+            > div {
+                flex: 1 0;
+                min-width: calc(50% - (#{$gap} / 2));           // calculate the gap to remove to maintain 50%
+            }
+        }
+        @media (min-width: $breakpoint-lg) {
+            > div {
+                min-width: calc(33% - ((#{$gap} * 2) / 3));     // calculate the gap to remove to maintain 33%
+            }
+        }
+    }
+}
+
+.portfolio .flex-container {
+    > * { // flex items
+        position: relative;
+        transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
+        top: 0;
+        &:hover {
+            border: 1px solid $color-primary;
+            top: -10px;
+            scale: 105%;
+            transform: rotate(-1deg);
+            background-color: rgba($color-primary, 0.5);
+            box-shadow: 0 0 10px 5px $color-primary;
+        }
+    }
+}
+
+.portfolio-card {
+    p {
+        padding: 5px 10px;
+    }
+    &:hover {
+        p {
+            text-decoration: underline;
+        }
+    }
+}
+
+.placeholder {
+    filter: brightness(0.25);
+}
+
+
+// ==========================================================================
+//  SCS Layout
+// ==========================================================================
+
+.scs {
+    h2 {
+        margin-top: 40px;
+    }
+    p {
+        margin-left: 40px;
+    }
+    ul {
+        list-style: none;
+    }
+    img {
+        position: relative;
+        width: 50px;
+        top: 15px;
+        left: 15px;
+    }
+}
+
+
+// ==========================================================================
+//  Contact Layout
+// ==========================================================================
+
+.contact {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (min-width: $breakpoint-md) {
+            flex-direction: row;
+            > div {
+                max-width: 38%;
+            }
+            > form {
+                height: 100%;
+            }
+        }
+    }
+    form {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        #first, #last, #email, #subject, #message {
+            width: 100%;
+        }
+        @media (min-width: $breakpoint-xs) {
+            #first, #last {
+                flex: 1 0;
+            }
+        }
+    }
+    input[type=text], input[type=email] {
+        height: 50px;
+    }
+    input[type=submit] {
+        font-size: 1.2em;
+    }
+    a:hover {
+        color: darken($color-primary, 20%);
+        text-decoration: none;
+    }
+}
+
+input[type="text"], input[type="email"], textarea {
+    padding-left: 10px;
+    transition: box-shadow 0.5s;
+    border-radius: 5px;
+    border: 1px solid black;
+    &:focus {
+        border-color: darken($color-primary, 20%);
+        box-shadow: 0 0 10px 5px $color-primary;
+    }
+    &:hover {
+        border-color: darken($color-primary, 20%);
+    }
+}
+textarea {
+    padding-top: 10px;
+}
+
+// ==========================================================================
+//  Footer Layout
+// ==========================================================================
+
+.footer {
+    border-top: 2px solid $color-primary;
+    text-align: center;
+}
