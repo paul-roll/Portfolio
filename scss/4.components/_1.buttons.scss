@@ -8,6 +8,7 @@
     display: inline-block;
     &:hover {
         text-decoration: none;
+        color: white;
     }
     h3 {
         margin: 0;
@@ -20,7 +21,6 @@
     border-radius: 5px;
     background-color: lighten($color-primary, 10%);
     &:hover {
-        color: white;
         background-color: darken($color-primary, 20%);
         box-shadow: 0 0 10px 5px $color-primary;
     }
@@ -30,7 +30,6 @@
     @extend %btn;
     background-color: rgba(white, 0.2);
     &:hover {
-        color: white;
         background-color: rgba(darken($color-primary, 20%), 0.5);
         box-shadow: 0 0 10px 5px rgba(darken($color-primary, 20%), 0.5);
     }
@@ -42,7 +41,6 @@
     padding-left: 20px;
     padding-right: 20px;
     &:hover {
-        color: white;
         background-color: darken($color-primary, 20%);
         box-shadow: 0 0 10px 5px $color-primary;
     }
@@ -61,7 +59,6 @@
 .btn-footer {
     @extend %btn;
     &:hover {
-        color: white;
         background-color: darken($color-primary, 10%);
         box-shadow: 0 0 10px 5px $color-primary;
     }

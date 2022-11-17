@@ -761,23 +761,23 @@ textarea {
 /* line 9, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic:hover, .btn-burger:hover, .btn-nav:hover, .btn-banner:hover, .btn-footer:hover {
   text-decoration: none;
+  color: white;
 }
 
-/* line 12, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 13, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic h3, .btn-burger h3, .btn-nav h3, .btn-banner h3, .btn-footer h3 {
   margin: 0;
 }
 
-/* line 17, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 18, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic {
   border: 1px solid black;
   border-radius: 5px;
   background-color: #b3e0f2;
 }
 
-/* line 22, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 23, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-basic:hover {
-  color: white;
   background-color: #30aadc;
   box-shadow: 0 0 10px 5px #87CEEB;
 }
@@ -789,40 +789,37 @@ textarea {
 
 /* line 32, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-burger:hover {
-  color: white;
   background-color: rgba(48, 170, 220, 0.5);
   box-shadow: 0 0 10px 5px rgba(48, 170, 220, 0.5);
 }
 
-/* line 39, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 38, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-nav {
   border-radius: 50%;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 44, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 43, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-nav:hover {
-  color: white;
   background-color: #30aadc;
   box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 51, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 49, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-banner {
   background-color: transparent;
 }
 
-/* line 54, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 52, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-banner:hover {
   color: black;
   background-color: rgba(135, 206, 235, 0.5);
   box-shadow: 0 0 10px 5px rgba(135, 206, 235, 0.5);
 }
 
-/* line 63, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
+/* line 61, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/4.components/_1.buttons.scss */
 .btn-footer:hover {
-  color: white;
   background-color: #5bbce4;
   box-shadow: 0 0 10px 5px #87CEEB;
 }
