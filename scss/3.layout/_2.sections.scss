@@ -161,6 +161,9 @@ section {
         top: 15px;
         left: 15px;
     }
+    .score::after {
+        content: '#{$treehouse-score}';
+    }
 }
 
 

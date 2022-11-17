@@ -13,6 +13,10 @@ $wrapper-sm       : $breakpoint-sm - 18px - 200px;      // remove 200px for nav 
 $wrapper-md       : $breakpoint-md - 22px - 200px;
 $wrapper-lg       : $breakpoint-lg - 50px - 200px;
 
+// Treehouse score
+// somehow adapt to use 'https://teamtreehouse.com/profiles/paulroll2.json' later
+$treehouse-score  : 3743;
+
 // Colors
 $color-white-1: darken(white,5%);
 $color-white-2: darken(white,10%);
