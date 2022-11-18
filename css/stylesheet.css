@@ -266,6 +266,7 @@ th {
 /* line 10, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/2.base/_2.base.scss */
 html {
   font-family: 'Alegreya', serif;
+  font-size: 1.1em;
   scroll-behavior: smooth;
 }
 
@@ -557,55 +558,56 @@ section {
   .aboutme img {
     float: right;
     max-width: 50%;
-    margin: -75px 0 0 10px;
+    margin-top: -75px;
+    padding-left: 10px;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 69, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 70, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .aboutme img {
     margin-top: -120px;
   }
 }
 
-/* line 81, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 82, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container, .examples .flex-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* line 87, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 88, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container img, .examples .flex-container img {
   width: 100%;
 }
 
-/* line 90, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 91, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container h3, .portfolio .flex-container p, .examples .flex-container h3, .examples .flex-container p {
   margin: 0 10px;
 }
 
-/* line 93, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 94, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container p, .examples .flex-container p {
   padding: 5px 0;
 }
 
-/* line 95, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 96, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container p.view, .examples .flex-container p.view {
   padding-left: 10px;
 }
 
-/* line 99, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 100, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container h2, .examples .flex-container h2 {
   text-align: left;
 }
 
 @media (min-width: 992px) {
-  /* line 81, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 82, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .portfolio .flex-container, .examples .flex-container {
     flex-flow: row wrap;
   }
-  /* line 105, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 106, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .portfolio .flex-container > div, .examples .flex-container > div {
     flex: 1 0;
     min-width: calc(50% - (20px / 2));
@@ -613,20 +615,25 @@ section {
 }
 
 @media (min-width: 1200px) {
-  /* line 111, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 112, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .portfolio .flex-container > div, .examples .flex-container > div {
     min-width: calc(33% - ((20px * 2) / 3));
   }
 }
 
-/* line 119, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 116, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+.portfolio .flex-container > *, .examples .flex-container > * {
+  border: 1px solid rgba(135, 206, 235, 0.25);
+}
+
+/* line 123, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > * {
   position: relative;
   transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
   top: 0;
 }
 
-/* line 123, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 127, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > *:hover {
   border: 1px solid #87CEEB;
   top: -10px;
@@ -636,32 +643,28 @@ section {
   box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 130, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 134, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > *:hover .view {
   text-decoration: underline;
 }
 
-/* line 137, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
-.placeholder {
+/* line 142, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+.placeholder img {
   filter: brightness(0.25);
 }
 
-/* line 147, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 153, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs h2 {
   margin-top: 40px;
 }
 
-/* line 150, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
-.scs p {
-  margin-left: 40px;
-}
-
-/* line 153, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 156, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs ul {
   list-style: none;
+  padding-left: 0;
 }
 
-/* line 156, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 160, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs img {
   position: relative;
   width: 50px;
@@ -669,17 +672,24 @@ section {
   left: 15px;
 }
 
-/* line 162, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 166, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs .treehouse-score::after {
   content: "3743";
 }
 
-/* line 166, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 170, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs a:hover {
   color: #30aadc;
 }
 
-/* line 177, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+@media (min-width: 768px) {
+  /* line 174, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  .scs p, .scs ul {
+    padding-left: 20px;
+  }
+}
+
+/* line 187, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact .flex-container {
   display: flex;
   flex-direction: column;
@@ -687,55 +697,55 @@ section {
 }
 
 @media (min-width: 992px) {
-  /* line 177, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 187, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact .flex-container {
     flex-direction: row;
   }
-  /* line 183, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 193, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact .flex-container > div {
     max-width: 38%;
   }
-  /* line 186, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 196, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact .flex-container > form {
     height: 100%;
   }
 }
 
-/* line 191, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 201, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact form {
   display: flex;
   flex-flow: row wrap;
   gap: 10px;
 }
 
-/* line 195, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 205, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact form #first, .contact form #last, .contact form #email, .contact form #subject, .contact form #message {
   width: 100%;
 }
 
 @media (min-width: 576px) {
-  /* line 199, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 209, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact form #first, .contact form #last {
     flex: 1 0;
   }
 }
 
-/* line 204, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 214, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact input[type=text], .contact input[type=email] {
   height: 50px;
 }
 
-/* line 207, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 217, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact input[type=submit] {
   font-size: 1.2em;
 }
 
-/* line 210, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 220, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact a:hover {
   color: #30aadc;
 }
 
-/* line 215, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 225, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 input[type="text"], input[type="email"], textarea {
   padding-left: 10px;
   transition: box-shadow 0.5s;
@@ -743,23 +753,23 @@ input[type="text"], input[type="email"], textarea {
   border: 1px solid black;
 }
 
-/* line 220, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 230, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   border-color: #30aadc;
   box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 224, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 input[type="text"]:hover, input[type="email"]:hover, textarea:hover {
   border-color: #30aadc;
 }
 
-/* line 228, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 238, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 textarea {
   padding-top: 10px;
 }
 
-/* line 236, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 246, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .footer {
   border-top: 2px solid #87CEEB;
   text-align: center;
