@@ -90,6 +90,12 @@ section {
         h3, p {
             margin: 0 10px;
         }
+        p {
+            padding: 5px 0;
+            &.view {
+                padding-left: 10px;
+            }
+        }
         h2 {
             text-align: left;
         }
@@ -121,17 +127,9 @@ section {
             transform: rotate(-1deg);
             background-color: rgba($color-primary, 0.5);
             box-shadow: 0 0 10px 5px $color-primary;
-        }
-    }
-}
-
-.portfolio-card {
-    p {
-        padding: 5px 10px;
-    }
-    &:hover {
-        p {
-            text-decoration: underline;
+            .view {
+                text-decoration: underline;
+            }
         }
     }
 }
