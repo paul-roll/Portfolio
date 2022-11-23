@@ -7,11 +7,12 @@
     font-size: 2em;
     top: -2px;
     left: -2px;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
 }
 
 .sidebar {
+    z-index: 1;
     border-right: 2px solid $color-primary;
     margin: 0;
     padding: 0;
@@ -20,6 +21,7 @@
     overflow: hidden;
     height: 100%;
     h1 {
+        font-size: 3.4em;
         transition: color 0.2s;
         color: $color-primary;
         text-shadow: -1px -1px lighten(black, 50%), 1px -1px lighten(black, 25%), -1px 1px lighten(black, 25%), 1px 1px black;

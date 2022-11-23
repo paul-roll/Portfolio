@@ -11,3 +11,7 @@ $(".sidebar h1").on("click", function() {
 });
 
 $(".btn-burger").removeClass("hidden");
+
+$(".btn-burger").on("click", function() {
+  $("nav").toggleClass("hidden");
+});
