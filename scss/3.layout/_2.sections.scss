@@ -246,4 +246,8 @@ textarea {
 .footer {
     border-top: 2px solid $color-primary;
     text-align: center;
+    .flex-container {
+        display: flex;
+        justify-content: center;
+    }
 }
