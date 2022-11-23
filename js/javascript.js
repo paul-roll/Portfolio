@@ -9,3 +9,5 @@ $(".banner h1").textillate({
   $(".sidebar h1").on("click", function() {
     $(".banner h1").textillate("in");
   });
+
+  $(".btn-burger").removeClass("hidden");
