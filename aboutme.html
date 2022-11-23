@@ -5,13 +5,12 @@
     <title>Paul Roll - Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
     <script src="https://kit.fontawesome.com/764c638f7d.js" crossorigin="anonymous"></script>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Alegreya:wght@400;700&display=swap" rel="stylesheet" type="text/css"> 
-
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Alegreya:wght@400;700&display=swap" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
   </head>
 
   <body>
@@ -107,6 +106,22 @@
       </section>
     </footer>
 
-    <script src="src/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/textillate-0.4.0/assets/jquery.fittext.js"></script>
+    <script src="js/textillate-0.4.0/assets/jquery.lettering.js"></script>
+    <script src="js/textillate-0.4.0/jquery.textillate.js"></script>
+    <script>
+      $(".banner h1").textillate({
+        in: {
+          effect: "tada",
+        }
+      });
+      $(".btn-footer").on("click", function() {
+        $(".banner h1").textillate("in");
+      });
+      $(".sidebar h1").on("click", function() {
+        $(".banner h1").textillate("in");
+      });
+    </script>
   </body>
 </html>
