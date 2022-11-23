@@ -13,7 +13,7 @@ $(".sidebar h1").on("click", function() {
 $(".btn-burger").removeClass("hidden");
 
 $(".btn-burger").on("click", function() {
-  $("nav").toggleClass("hidden");
+  $(".sidebar").toggleClass("hidden");
 });
 
 $(".sidebar").on("click", function() {
@@ -22,8 +22,8 @@ $(".sidebar").on("click", function() {
   }
 });
 
-$("body").on("click", function(event) {
-  if ((!$(event.target).parent().hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden"))) {
+$(window).on("click resize scroll", function(event) {
+  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden"))) {
     $(".sidebar").addClass("hidden");
   }
-})
+});

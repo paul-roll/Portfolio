@@ -28,6 +28,9 @@
 .btn-burger {
     @extend %btn;
     background-color: rgba(white, 0.2);
+    i {
+        pointer-events: none;
+    }
     &:hover {
         background-color: rgba(darken($color-primary, 20%), 0.5);
         box-shadow: 0 0 10px 5px rgba(darken($color-primary, 20%), 0.5);
