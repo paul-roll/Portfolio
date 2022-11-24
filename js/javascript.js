@@ -47,7 +47,7 @@ function validateName(s) {
     return ""; // valid
   }
 }
-$(".first").on("focusin focusout", function() {
+$(".first").on("focusout", function() {
   error = validateName($("#first").val())
   $(".first p").remove();
   if (error) {
@@ -55,9 +55,10 @@ $(".first").on("focusin focusout", function() {
       $("#first").val(""); // clean the input box to make sure placeholder is shown
     }
     $(".first").append(`<p>${error}</p>`);
+    $(".first p").textillate({in:{effect: "flash", sync: true}});
   }
 });
-$(".last").on("focusin focusout", function() {
+$(".last").on("focusout", function() {
   error = validateName($("#last").val())
   $(".last p").remove();
   if (error) {
@@ -65,6 +66,7 @@ $(".last").on("focusin focusout", function() {
       $("#last").val(""); // clean the input box to make sure placeholder is shown
     }
     $(".last").append(`<p>${error}</p>`);
+    $(".last p").textillate({in:{effect: "flash", sync: true}});
   }
 });
 
@@ -84,7 +86,7 @@ if (!s) {
   return ""; // valid
 }
 }
-$(".email").on("focusin focusout", function() {
+$(".email").on("focusout", function() {
   error = validateEmail($("#email").val())
   $(".email p").remove();
   if (error) {
@@ -92,6 +94,7 @@ $(".email").on("focusin focusout", function() {
       $("#email").val(""); // clean the input box to make sure placeholder is shown
     }
     $(".email").append(`<p>${error}</p>`);
+    $(".email p").textillate({in:{effect: "flash", sync: true}});
   }
 });
 
@@ -110,7 +113,7 @@ function validatePhone(s) {
     return ""; // valid
   }
 }
-$("#phone").on("focusin focusout", function() {
+$("#phone").on("focusout", function() {
   error = validatePhone($("#phone").val())
   $(".phone p").remove();
   if (error) {
@@ -118,6 +121,7 @@ $("#phone").on("focusin focusout", function() {
       $("#phone").val("");
     } else {
       $(".phone").append(`<p>${error}</p>`);
+      $(".phone p").textillate({in:{effect: "flash", sync: true}});
     }
   }
 });
@@ -130,7 +134,7 @@ function validateSubject(s) {
     return ""; // valid
   }
 }
-$("#subject").on("focusin focusout", function() {
+$("#subject").on("focusout", function() {
   error = validateSubject($("#subject").val())
   $(".subject p").remove();
   if (error) {
@@ -138,6 +142,7 @@ $("#subject").on("focusin focusout", function() {
       $("#subject").val("");
     } else {
       $(".subject").append(`<p>${error}</p>`);
+      $(".subject p").textillate({in:{effect: "flash", sync: true}});
     }
   }
 });
@@ -150,7 +155,7 @@ function validateMessage(s) {
     return ""; // valid
   }
 }
-$(".message").on("focusin focusout", function() {
+$(".message").on("focusout", function() {
   error = validateMessage($("#message").val())
   $(".message p").remove();
   if (error) {
@@ -158,14 +163,17 @@ $(".message").on("focusin focusout", function() {
       $("#message").val(""); // clean the input box to make sure placeholder is shown
     }
     $(".message").append(`<p>${error}</p>`);
+    $(".message p").textillate({in:{effect: "flash", sync: true}});
   }
 });
 
 
 
 $(".btn-submit").on("click", function() {
-  
+
 })
 
-// make everything show default errors on page load
-$("form *").trigger("focusin");
+
+// On page load: trigger the focusout event on all form elements
+// to make sure they show *Required* errors
+$("form *").trigger("focusout");
