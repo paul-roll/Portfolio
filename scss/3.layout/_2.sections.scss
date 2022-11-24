@@ -201,11 +201,16 @@ section {
         display: flex;
         flex-flow: row wrap;
         gap: 10px;
-        #first, #last, #email, #subject, #message {
+        p {
+            color: red;
+            margin: 0;
+            padding: 4px 0 0 10px;
+        }
+        #first, .first, #last, .last, .email, #email, .phone, #phone, #subject, .subject, #message, .message {
             width: 100%;
         }
         @media (min-width: $breakpoint-xs) {
-            #first, #last {
+            .first, .last {
                 flex: 1 0;
             }
         }
