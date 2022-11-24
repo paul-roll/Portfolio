@@ -174,6 +174,8 @@ $(".btn-submit").on("click", function() {
 })
 
 
+
+
 // On page load: trigger the focusout event on all form elements
 // to make sure they show *Required* errors
 $("form *").trigger("focusout");

@@ -166,10 +166,6 @@ section {
         top: 15px;
         left: 15px;
     }
-    .treehouse-score::after {
-        content: '#{$treehouse-score}';
-        
-    }
     @media (min-width: $breakpoint-sm) {
         p, ul {
             padding-left: 20px;
