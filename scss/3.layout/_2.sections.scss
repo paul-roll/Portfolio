@@ -201,15 +201,18 @@ section {
         display: flex;
         flex-flow: row wrap;
         gap: 10px;
-        p {
-            pointer-events: none;
+        label {
             position: relative;
-            color: red;
-            margin: 0;
-            padding: 4px 0 0 20px;
-            font-size: 0.85em;
-            bottom: 24px;
-            opacity: 0.5;
+            p {
+                pointer-events: none;
+                position: absolute;
+                color: red;
+                margin: 0;
+                padding: 4px 0 0 20px;
+                font-size: 0.85em;
+                bottom: 2px;
+                opacity: 0.5;
+            }
         }
         #first, .first, #last, .last, .email, #email, .phone, #phone, #subject, .subject, #message, .message {
             width: 100%;
