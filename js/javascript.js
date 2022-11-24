@@ -170,7 +170,7 @@ $(".message").on("focusout", function() {
 
 
 $(".btn-submit").on("click", function() {
-
+  $("form *").trigger("focusout");
 })
 
 
