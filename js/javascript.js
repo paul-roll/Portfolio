@@ -27,3 +27,7 @@ $(window).on("click resize scroll", function(event) {
     $(".sidebar").addClass("hidden");
   }
 });
+
+$(".btn-submit").on("click", function() {
+  alert("x");
+})
