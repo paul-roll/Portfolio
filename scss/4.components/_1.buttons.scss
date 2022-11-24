@@ -13,9 +13,6 @@
     h3 {
         margin: 0;
     }
-    &:focus {
-        box-shadow: 0 0 10px 5px $color-primary;
-    }
 }
 
 .btn-submit {
@@ -26,7 +23,9 @@
     &:hover {
         background-color: darken($color-primary, 20%);
     }
-
+    &:focus {
+        box-shadow: 0 0 10px 5px $color-primary;
+    }
 }
 
 .btn-burger {

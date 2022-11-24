@@ -124,6 +124,9 @@ section {
         position: relative;
         transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
         top: 0;
+        a {
+            color: black;
+        }
         &:hover {
             border: 1px solid $color-primary;
             top: -10px;
@@ -167,16 +170,12 @@ section {
         content: '#{$treehouse-score}';
         
     }
-    a:hover {
-        color: darken($color-primary, 20%);
-    }
     @media (min-width: $breakpoint-sm) {
         p, ul {
             padding-left: 20px;
         }
     }
 }
-
 
 
 // ==========================================================================
@@ -216,9 +215,6 @@ section {
     }
     input[type=submit] {
         font-size: 1.2em;
-    }
-    a:hover {
-        color: darken($color-primary, 20%);
     }
 }
 
