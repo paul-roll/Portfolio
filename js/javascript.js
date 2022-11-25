@@ -12,19 +12,37 @@ $(".sidebar h1").on("click", function() {
 
 $(".btn-burger").removeClass("hidden");
 
+function sidebarSlideIn() {
+  $(".sidebar").stop().css("left", "-200px").removeClass("hidden").animate({left: "+=200"}, 500, function() {
+    $(".sidebar").css("left", "");
+  });
+}
+function sidebarSlideOut() {
+  $(".sidebar").stop().animate({left: "-=200"}, 500, function() {
+    $(".sidebar").css("left", "").addClass("hidden");
+  });
+}
+
 $(".btn-burger").on("click", function() {
-  $(".sidebar").toggleClass("hidden");
+
+  if ($(".sidebar").hasClass("hidden")) {
+    sidebarSlideIn();
+  } else {
+    sidebarSlideOut();
+  }
+  
 });
 
-$(".sidebar").on("click", function() {
-  if (!$(".sidebar").hasClass("hidden")) {
-    $(".sidebar").addClass("hidden")
+
+$(window).on("click scroll", function(event) {
+  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden"))) {
+    sidebarSlideOut();
   }
 });
 
-$(window).on("click resize scroll", function(event) {
-  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden"))) {
-    $(".sidebar").addClass("hidden");
+$(window).on("resize", function(event) {
+  if (!$(".sidebar").hasClass("hidden")) {
+    $(".sidebar").stop().css("left", "").addClass("hidden");
   }
 });
 
