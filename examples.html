@@ -62,8 +62,11 @@
         <div class="wrapper">
           <a id="examples"></a>
           <h2>Coding Examples</h2>
-          <div class="example">
-            <pre><code class="language-scss">$arrow-width: 100px;
+          <div class="flex-container">
+            <div>
+              <p class="bold">Netmatters Reflection:<br>News footer - mouse-over popup</p>
+              <p>Sassy Cascading Style Sheets</p>
+              <pre><code class="language-scss">$arrow-width: 100px;
 $box-width: 240px;
 .arrow {
     position: absolute;
@@ -82,30 +85,54 @@ $box-width: 240px;
     width: $box-width;
     bottom: calc(100% + (#{$arrow-width} / 2) + 15px);
     left: calc(50% - (#{$box-width} / 2));
-
 }</code></pre>
-      <p>Language used</p>
-      <p>What it does</p>
-      <p>Why you've used it</p>
-        </div>
-          <div class="flex-container">
-          
-            <div>
-              <img src="img/examples.jpg" alt="">
-              <h3>Coming Soon</h3>
-              <p>Curabitur nec felis et massa interdum interdum ut eu nulla. Sed iaculis feugiat pellentesque. Cras mauris purus, rutrum eget tincidunt ac, placerat at dui. Morbi dapibus gravida dui vitae vestibulum. Quisque venenatis ultricies mi vitae feugiat. Mauris purus lacus, pellentesque id rhoncus ut, commodo non metus. Nulla eu sapien est.</p>
+              <p>Style and position a pair of objects for showing content in.</p>
+              <p>Manipulate the way that borders intersect to create a triangle by turning the other sides transparent.</p>
+              <p>Uses the calc() function to set the position of the triangle above and centered over its relative object, and the content box adjacent directly above it.</p>
+              <div class="example1">
+                <a class="bold">Example
+                  <div class="hidden arrow"></div>
+                  <div class="hidden box"></div>
+                </a>
+              </div>
             </div>
 
             <div>
-              <img src="img/examples.jpg" alt="">
-              <h3>Coming Soon</h3>
-              <p>Integer vitae tellus nisi. Aenean vel aliquam nisl, auctor laoreet mi. Vivamus euismod sem ut nulla feugiat semper. Fusce at elementum eros, et mattis urna. Morbi vel mattis dui. Etiam faucibus aliquam vulputate. Pellentesque commodo tristique felis non sollicitudin.</p>
-            </div>
+              <p class="bold">Netmatters Reflection:<br>Assigning styles to each icon</p>
+              <p>Sassy Cascading Style Sheets</p>
+              <pre><code class="language-scss">@mixin icon($service, $font-size) {
+  &::before {
+      font-size: $font-size;
+      content: map-get($service-icons, $service);
+  }
+}                
 
-            <div class="placeholder hidden show-lg">
-              <img src="img/examples.jpg" alt="">
-              <h3>Coming Soon</h3>
-              <p>&nbsp;</p>
+@each $service, $color in $service-colors {
+    &.#{$service} {
+        i {
+            @include icon($service, 2em);
+        }
+        > i::before {
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            background: $color;
+            color: $color-white;
+        }
+        &:hover {
+            top: -10px;
+            background-color: $color;
+            color: $color-white;
+            i::before {
+                color: $color;
+                background-color: $color-white;
+            }
+        }
+    }
+}</code></pre>
+              <p>The icon @mixin takes a service name as the key to map each icon.</p>
+              <p>An each loop then iterates through all of the different services setting their styles, each with their own color and icon</p>
+              <p>This styles 7 different icons with the same section of code rather than having to repeat it.</p>
             </div>
 
           </div>

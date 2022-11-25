@@ -75,10 +75,10 @@ section {
 
 
 // ==========================================================================
-// Portfolio & Examples Layout
+// Portfolio Layout
 // ==========================================================================
 
-.portfolio, .examples {
+.portfolio {
     .flex-container {
         display: flex;
         flex-direction: column;
@@ -100,8 +100,27 @@ section {
         h2 {
             text-align: left;
         }
-
-                @media (min-width: $breakpoint-md) {
+        > * { // flex items
+            position: relative;
+            transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
+            border: 1px solid rgba($color-primary, 0.25);
+            top: 0;
+            a {
+                color: black;
+            }
+            &:hover {
+                border: 1px solid $color-primary;
+                top: -10px;
+                scale: 105%;
+                transform: rotate(-1deg);
+                background-color: rgba($color-primary, 0.5);
+                box-shadow: 0 0 10px 5px $color-primary;
+                .view {
+                    text-decoration: underline;
+                }
+            }
+        }
+        @media (min-width: $breakpoint-md) {
             flex-flow: row wrap;
             > div {
                 flex: 1 0;
@@ -113,38 +132,27 @@ section {
                 min-width: calc(33% - ((#{$gap} * 2) / 3));     // calculate the gap to remove to maintain 33%
             }
         }
-        > * { // flex items
-            border: 1px solid rgba($color-primary, 0.25);
-        }
     }
 }
 
-.portfolio .flex-container {
-    > * { // flex items
-        position: relative;
-        transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
-        top: 0;
-        a {
-            color: black;
-        }
-        &:hover {
-            border: 1px solid $color-primary;
-            top: -10px;
-            scale: 105%;
-            transform: rotate(-1deg);
-            background-color: rgba($color-primary, 0.5);
-            box-shadow: 0 0 10px 5px $color-primary;
-            .view {
-                text-decoration: underline;
+
+// ==========================================================================
+// Examples Layout
+// ==========================================================================
+
+.examples {
+    .flex-container {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 40px 40px;
+        > * {
+            flex: 1 0;
+            @media (min-width: $breakpoint-xs) {
+                border: 1px solid rgba($color-primary, 0.25);
             }
         }
     }
-}
-
-.examples {
-
     pre {
-        margin: 0 -7px;
         @media (max-width: 290px) {
             margin: 0 -14px;
         }
@@ -157,16 +165,46 @@ section {
             }    
         }
     }
-    .example {
-        p {
-            padding-left: 20px;
-        }
+    p {
+        padding: 0 10px;
     }
 }
 
 .placeholder {
     img {
         filter: brightness(0.25);
+    }
+}
+
+.example1{
+    text-align: center;
+    position: relative;
+    $arrow-width: 100px;
+    $box-width: 240px;
+    .arrow {
+        position: absolute;
+        color: #333645;
+        height: 0;
+        width: $arrow-width;
+        bottom: calc(100% + 15px);
+        left: calc(50% - (#{$arrow-width} / 2));
+        border-left: ($arrow-width / 2) solid transparent;
+        border-right: ($arrow-width / 2) solid transparent;
+        border-top: ($arrow-width / 2) solid;
+    }
+    .box {
+        position: absolute;
+        background-color: #333645;
+        width: $box-width;
+        bottom: calc(100% + (#{$arrow-width} / 2) + 15px);
+        left: calc(50% - (#{$box-width} / 2));
+        height: 175px;
+    }
+    a:hover {
+        // color: darken($color-primary, 20%);
+        .arrow, .box {
+            display: block;
+        }
     }
 }
 
