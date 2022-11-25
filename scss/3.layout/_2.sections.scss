@@ -141,6 +141,29 @@ section {
     }
 }
 
+.examples {
+
+    pre {
+        margin: 0 -7px;
+        @media (max-width: 290px) {
+            margin: 0 -14px;
+        }
+        code.hljs {
+            background-color: rgba($color-primary, 0.1);
+            padding: 0;
+            font-size: 0.5em;
+            @media (min-width: 350px) {
+                font-size: 0.6em;
+            }    
+        }
+    }
+    .example {
+        p {
+            padding-left: 20px;
+        }
+    }
+}
+
 .placeholder {
     img {
         filter: brightness(0.25);

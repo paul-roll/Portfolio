@@ -62,6 +62,32 @@
         <div class="wrapper">
           <a id="examples"></a>
           <h2>Coding Examples</h2>
+          <div class="example">
+            <pre><code class="language-scss">$arrow-width: 100px;
+$box-width: 240px;
+.arrow {
+    position: absolute;
+    color: $color-tuna;
+    height: 0;
+    width: $arrow-width;
+    bottom: calc(100% + 15px);
+    left: calc(50% - (#{$arrow-width} / 2));
+    border-left: ($arrow-width / 2) solid transparent;
+    border-right: ($arrow-width / 2) solid transparent;
+    border-top: ($arrow-width / 2) solid;
+}
+.box {
+    position: absolute;
+    background-color: $color-tuna;
+    width: $box-width;
+    bottom: calc(100% + (#{$arrow-width} / 2) + 15px);
+    left: calc(50% - (#{$box-width} / 2));
+
+}</code></pre>
+      <p>Language used</p>
+      <p>What it does</p>
+      <p>Why you've used it</p>
+        </div>
           <div class="flex-container">
           
             <div>
