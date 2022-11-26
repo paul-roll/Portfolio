@@ -8,10 +8,10 @@ $breakpoint-sm    : 768px;
 $breakpoint-md    : 992px;
 $breakpoint-lg    : 1200px;
 // Margins      // Used with wrapper to keep content within bounds
-$wrapper-xs       : $breakpoint-xs - 14px - 200px;      
-$wrapper-sm       : $breakpoint-sm - 18px - 200px;      // remove 200px for nav here until i have a working menu toggle
-$wrapper-md       : $breakpoint-md - 22px - 200px;
-$wrapper-lg       : $breakpoint-lg - 50px - 200px;
+$wrapper-xs       : $breakpoint-xs - 14px;  // 562  N/A
+$wrapper-sm       : $breakpoint-sm - 18px;  // 750  550
+$wrapper-md       : $breakpoint-md - 22px;  // 970  770
+$wrapper-lg       : $breakpoint-lg - 50px;  // 1150 950
 
 // Colors
 $color-white-1: darken(white,5%);

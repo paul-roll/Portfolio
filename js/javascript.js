@@ -16,11 +16,13 @@ function sidebarSlideIn() {
   $(".sidebar").stop().css("left", "-200px").removeClass("hidden").animate({left: "+=200"}, 500, function() {
     $(".sidebar").css("left", "");
   });
+  $(".wrapper").addClass("wrapper-nav").removeClass("wrapper");
 }
 function sidebarSlideOut() {
   $(".sidebar").stop().animate({left: "-=200"}, 500, function() {
     $(".sidebar").css("left", "").addClass("hidden");
   });
+  $(".wrapper-nav").addClass("wrapper").removeClass("wrapper-nav");
 }
 
 $(".btn-burger").on("click", function() {
@@ -35,18 +37,20 @@ $(".btn-burger").on("click", function() {
 
 
 $(window).on("click scroll", function(event) {
-  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden"))) {
+  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).width() < 576)) {
     sidebarSlideOut();
   }
 });
 
+let prevWidth = $(window).width();
 $(window).on("resize", function(event) {
-  if (!$(".sidebar").hasClass("hidden")) {
-    $(".sidebar").stop().css("left", "").addClass("hidden");
-  }
+    if ((prevWidth < 576) && ($(window).width() >= 576)) {
+      sidebarSlideIn();
+    } else if ((prevWidth >= 576) && ($(window).width() < 576)) {
+      sidebarSlideOut();
+    }
+  prevWidth = $(window).width();
 });
-
-
 
 
 function validateName(s) {
@@ -193,7 +197,19 @@ $(".btn-submit").on("click", function() {
 
 
 
+// on page load
+$(document).ready(function() {
 
-// On page load: trigger the focusout event on all form elements
-// to make sure they show *Required* errors
-$("form *").trigger("focusout");
+  // trigger the focusout event on all form elements
+  // to make sure they show *Required* errors
+  $("form *").trigger("focusout");
+
+  // start the sidebar out if screen is wider than 576
+  if ($(window).width() >= 576) {
+    $(".sidebar").removeClass("hidden");
+    $(".wrapper").addClass("wrapper-nav").removeClass("wrapper");
+  } 
+});
+
+
+

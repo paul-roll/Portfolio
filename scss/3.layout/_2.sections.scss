@@ -4,9 +4,6 @@
 
 section {
     overflow: hidden;
-    @media (min-width: $breakpoint-xs) {    // placeholder until menu toggle is added
-        margin-left: 200px;
-    }
 }
 
 @each $section, $color in $background-colors {

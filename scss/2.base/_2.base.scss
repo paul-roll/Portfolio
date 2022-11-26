@@ -69,6 +69,12 @@ a {
     }
 }
 
+.wrapper-nav {
+    @extend .wrapper;
+    @media (min-width: $breakpoint-xs) {
+        padding-left: 215px;
+    }
+}
 
 .hidden {       // Hide at screen width 1+
     display: none;
