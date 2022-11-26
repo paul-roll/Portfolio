@@ -9,20 +9,27 @@
 
 html {
     font-family: 'Alegreya', serif; // make Alegreya the default font
-    font-size: 1.1em;
+    font-size: 1em; //16px
     scroll-behavior: smooth;
 }
 
 p, form, li {                                       // Adjust font for paragraph and form elements
     font-family: 'Alegreya Sans', sans-serif;   // make Alegreya-Sans the default font for readability
+    font-size: 1.125em;
 }
 
 h1 {
-    font-size: 2.4em;
+    font-size: 2.64em;
     margin: 16px;
     @media (min-width: $breakpoint-xs) {
-        font-size: 3.4em;
+        font-size: 3.75em;
     }
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.25em;
 }
 
 hr {
@@ -71,7 +78,7 @@ a {
 
 .wrapper-nav {
     @extend .wrapper;
-    @media (min-width: $breakpoint-xs) {
+    @media (min-width: $breakpoint-sm) {
         padding-left: 215px;
     }
 }

@@ -62,19 +62,21 @@
         <div class="wrapper">
           <a id="examples"></a>
           <h2>Coding Examples</h2>
-          <div class="flex-container">
             <div>
-              <p class="bold">Netmatters Reflection:<br>Mouse-over popup</p>
-              <p>Sassy Cascading Style Sheets</p>
-              <pre><code class="language-scss">$arrow-width: 100px;
+            <p class="bold">Netmatters Reflection:<br>Mouse-over popup</p>
+            <p>Sassy Cascading Style Sheets</p>
+            <pre><code class="language-scss">$arrow-width: 100px;
 $box-width: 240px;
 .arrow {
     position: absolute;
     color: $color-tuna;
     height: 0;
     width: $arrow-width;
+    // 15px above relative object
     bottom: calc(100% + 15px);
+    // Align center to relative object
     left: calc(50% - (#{$arrow-width} / 2));
+    // Build down pointing arrow / triangle
     border-left: ($arrow-width / 2) solid transparent;
     border-right: ($arrow-width / 2) solid transparent;
     border-top: ($arrow-width / 2) solid;
@@ -83,44 +85,70 @@ $box-width: 240px;
     position: absolute;
     background-color: $color-tuna;
     width: $box-width;
+    // Adjacent above .arrow object
     bottom: calc(100% + (#{$arrow-width} / 2) + 15px);
+    // Align center to relative object
     left: calc(50% - (#{$box-width} / 2));
 }</code></pre>
-              <p>Style and position a pair of objects for showing content in.</p>
-              <p>Manipulate the way that borders intersect to create a triangle by turning the other sides transparent.</p>
-              <p>Uses the calc() function to set the position of the triangle above and centered over its relative object, and the content box adjacent directly above it.</p>
-              <div class="example1">
-                <a class="bold">Example
-                  <div class="hidden arrow"></div>
-                  <div class="hidden box"></div>
-                </a>
-              </div>
+            <p>Style and position a pair of objects for showing content in.</p>
+            <p>Manipulates the way that borders intersect to create a triangle by turning the sides transparent.</p>
+            <p>Uses the calc() function to do math on positions and lengths to calculate the dimensions relative to one another.</p>
+            <div class="example1 bold">
+              <a><p>Example</p></a>
+              <div class="hidden arrow"></div>
+              <div class="hidden box"></div>
             </div>
+          </div>
 
-            <div>
-              <p class="bold">Netmatters Reflection:<br>Assigning styles to each icon</p>
-              <p>Sassy Cascading Style Sheets</p>
-              <pre><code class="language-scss">@mixin icon($service, $font-size) {
+          <div>
+            <p class="bold">Netmatters Reflection:<br>Assigning styles to each icon</p>
+            <p>Sassy Cascading Style Sheets</p>
+            <pre><code class="language-scss">// Maps
+$service-colors: (
+  'bespoke-software':     #67809F,    // hoki
+  'it-support':           #4183D7,    // havelock-blue
+  'digital-marketing':    #2ECC71,    // shamrock
+  'telecoms-services':    #D64541,    // valencia
+  'web-design':           #926FB1,    // wisteria
+  'cyber-security':       #F62459,    // radical-red
+  'developer-course':     #CE4125,    // punch
+);
+
+$service-icons: (
+  'bespoke-software':     "\f58e",    // grip-vertical
+  'it-support':           "\e163",    // display
+  'digital-marketing':    "\f201",    // chart-line
+  'telecoms-services':    "\f2a0",    // phone-volume
+  'web-design':           "\f121",    // code
+  'cyber-security':       "\f3ed",    // shield-halved
+  'developer-course':     "\f19d",    // graduation-cap
+);</code></pre>
+            <p>A map of key-pairs to make the values easier to work with and ensure that they are never defined more than once.</p>
+            <pre><code class="language-scss">@mixin icon($service, $font-size) {
   &::before {
       font-size: $font-size;
       content: map-get($service-icons, $service);
   }
-}                
-
+}</code></pre>
+            <p>A simple mixin that takes a service name and maps the appropriate icon value to the content (::before) where it is used.</p>
+            <pre><code class="language-scss">// Loop through each service to assign colors and icons
 @each $service, $color in $service-colors {
     &.#{$service} {
         i {
+            // mixin to set the icon and font size
             @include icon($service, 2em);
         }
         > i::before {
-            border-radius: 50%;
-            width: 65px;
-            height: 65px;
-            background: $color;
-            color: $color-white;
+          text-align: center;
+          line-height: 2em;
+          display: block;
+          border-radius: 50%;
+          width: 65px;
+          height: 65px;
+          background: $color;
+          color: white;
         }
         &:hover {
-            top: -10px;
             background-color: $color;
             color: $color-white;
             i::before {
@@ -130,12 +158,24 @@ $box-width: 240px;
         }
     }
 }</code></pre>
-              <p>The icon @mixin takes a service name as the key to map each icon.</p>
-              <p>An each loop then iterates through all of the different services setting their styles, each with their own color and icon</p>
-              <p>This styles 7 different icons with the same section of code rather than having to repeat it.</p>
-            </div>
+            <p>A loop that iterates through all of the different key-pairs in the service-colors map.</p>
+            <p>Styling each icon and assigning each one its unique icon and color using the mixin from before and the $color variable from the each loop.</p>
+            <p>This styles 7 different icons with the same section of code rather than having to repeat it.</p>
 
+            <div class="example2 bold">
+              <p>Example</p>
+              <div>
+                <div class="bespoke-software"><i class="fa-solid"></i></div>
+                <div class="it-support"><i class="fa-solid"></i></div>
+                <div class="digital-marketing"><i class="fa-solid"></i></div>
+                <div class="telecoms-services"><i class="fa-solid"></i></div>
+                <div class="web-design"><i class="fa-solid"></i></div>
+                <div class="cyber-security"><i class="fa-solid"></i></div>
+                <div class="developer-course"><i class="fa-solid"></i></div>
+              </div>
+            </div>
           </div>
+          
         </div>
       </section>
 

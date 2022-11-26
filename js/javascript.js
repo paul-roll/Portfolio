@@ -37,16 +37,16 @@ $(".btn-burger").on("click", function() {
 
 
 $(window).on("click scroll", function(event) {
-  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).width() < 576)) {
+  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).width() < 768)) {
     sidebarSlideOut();
   }
 });
 
 let prevWidth = $(window).width();
 $(window).on("resize", function(event) {
-    if ((prevWidth < 576) && ($(window).width() >= 576)) {
+    if ((prevWidth < 768) && ($(window).width() >= 768)) {
       sidebarSlideIn();
-    } else if ((prevWidth >= 576) && ($(window).width() < 576)) {
+    } else if ((prevWidth >= 768) && ($(window).width() < 768)) {
       sidebarSlideOut();
     }
   prevWidth = $(window).width();
@@ -204,8 +204,8 @@ $(document).ready(function() {
   // to make sure they show *Required* errors
   $("form *").trigger("focusout");
 
-  // start the sidebar out if screen is wider than 576
-  if ($(window).width() >= 576) {
+  // start the sidebar out if screen is wider than 768
+  if ($(window).width() >= 768) {
     $(".sidebar").removeClass("hidden");
     $(".wrapper").addClass("wrapper-nav").removeClass("wrapper");
   } 

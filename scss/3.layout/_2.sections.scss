@@ -132,34 +132,30 @@ section {
     }
 }
 
+.placeholder {
+    img {
+        filter: brightness(0.25);
+    }
+}
+
 
 // ==========================================================================
 // Examples Layout
 // ==========================================================================
 
 .examples {
-    .flex-container {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 40px 40px;
-        > * {
-            flex: 1 0;
-            @media (min-width: $breakpoint-xs) {
-                border: 1px solid rgba($color-primary, 0.25);
-            }
+    .wrapper > div {
+        margin: 40px 0;
+        @media (min-width: $breakpoint-xs) {
+            border: 1px solid rgba($color-primary, 0.25);
         }
     }
     pre {
-        @media (max-width: 290px) {
-            margin: 0 -14px;
+        @media (max-width: (576px - 1)) {
+            margin: 0 -15px;
         }
         code.hljs {
-            background-color: rgba($color-primary, 0.1);
-            padding: 0;
-            font-size: 0.5em;
-            @media (min-width: 350px) {
-                font-size: 0.6em;
-            }    
+            background-color: rgba($color-primary, 0.2);
         }
     }
     p {
@@ -167,13 +163,9 @@ section {
     }
 }
 
-.placeholder {
-    img {
-        filter: brightness(0.25);
-    }
-}
-
 .example1{
+    width: 100px;
+    margin: 15px auto;
     text-align: center;
     position: relative;
     $arrow-width: 100px;
@@ -197,10 +189,83 @@ section {
         left: calc(50% - (#{$box-width} / 2));
         height: 175px;
     }
-    a:hover {
-        // color: darken($color-primary, 20%);
+    &:hover {
+        cursor: default;
         .arrow, .box {
             display: block;
+        }
+    }
+}
+
+
+.example2{
+ 
+    $service-colors: (
+        'bespoke-software':     #67809F,    // hoki
+        'it-support':           #4183D7,    // havelock-blue
+        'digital-marketing':    #2ECC71,    // shamrock
+        'telecoms-services':    #D64541,    // valencia
+        'web-design':           #926FB1,    // wisteria
+        'cyber-security':       #F62459,    // radical-red
+        'developer-course':     #CE4125,    // punch
+    );
+
+    $service-icons: (
+        'bespoke-software':     "\f58e",    // fa-grip-vertical
+        'it-support':           "\e163",    // fa-display
+        'digital-marketing':    "\f201",    // fa-chart-line
+        'telecoms-services':    "\f2a0",    // fa-phone-volume
+        'web-design':           "\f121",    // fa-code
+        'cyber-security':       "\f3ed",    // fa-shield-halved
+        'developer-course':     "\f19d",    // fa-graduation-cap
+    );
+
+    @mixin icon($service, $font-size) {
+        &::before {
+            font-size: $font-size;
+            content: map-get($service-icons, $service);
+        }
+    }
+
+    @each $service, $color in $service-colors {
+        .#{$service} {
+            i {
+                @include icon($service, 2em);
+            }
+            > i::before {
+                text-align: center;
+                line-height: 2em;
+                display: block;
+                border-radius: 50%;
+                width: 65px;
+                height: 65px;
+                background: $color;
+                color: white;
+            }
+            &:hover {
+                top: -10px;
+                background-color: $color;
+                color: white;
+                i::before {
+                    color: $color;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+    > div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 0 5px;
+        // margin: 0 5px;
+        > div {
+            margin: 5px 0px;
         }
     }
 }
@@ -263,7 +328,7 @@ section {
                 color: red;
                 margin: 0;
                 padding: 4px 0 0 20px;
-                font-size: 0.85em;
+                font-size: 0.77778em;
                 bottom: 2px;
                 opacity: 0.5;
             }
@@ -279,9 +344,6 @@ section {
     }
     input[type=text], input[type=email] {
         height: 50px;
-    }
-    input[type=submit] {
-        font-size: 1.2em;
     }
 }
 
