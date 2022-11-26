@@ -164,7 +164,7 @@ section {
 }
 
 .example1{
-    width: 100px;
+    width: 150px;
     margin: 15px auto;
     text-align: center;
     position: relative;
@@ -187,7 +187,15 @@ section {
         width: $box-width;
         bottom: calc(100% + (#{$arrow-width} / 2) + 15px);
         left: calc(50% - (#{$box-width} / 2));
-        height: 175px;
+        color: white;
+        h2 {
+            margin: 15px;
+        }
+        hr {
+            margin: auto;
+            border-color: white;
+            width: 90%;
+        }
     }
     &:hover {
         cursor: default;
