@@ -19,6 +19,8 @@ section {
 // ==========================================================================
 
 .banner {
+    transform: skewY(-5deg);
+    border-top: 2px solid $color-primary;
     border-bottom: 2px solid $color-primary;
     color: white;
     background-image: url(../img/banner.jpg);

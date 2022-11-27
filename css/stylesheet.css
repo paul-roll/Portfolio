@@ -4336,6 +4336,8 @@ section {
 
 /* line 21, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .banner {
+  transform: skewY(-5deg);
+  border-top: 2px solid #87CEEB;
   border-bottom: 2px solid #87CEEB;
   color: white;
   background-image: url(../img/banner.jpg);
@@ -4343,7 +4345,7 @@ section {
   text-align: center;
 }
 
-/* line 27, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 29, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .banner .flex-container {
   height: 100vh;
   display: flex;
@@ -4352,29 +4354,29 @@ section {
   align-items: center;
 }
 
-/* line 33, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 35, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .banner .flex-container > div {
   margin-top: auto;
   text-shadow: -1px -1px gray, 1px -1px #404040, -1px 1px #404040, 1px 1px black;
 }
 
-/* line 39, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 41, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .banner .flex-container > a {
   color: white;
   margin-top: auto;
 }
 
-/* line 52, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 54, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .aboutme img {
   max-width: 100%;
 }
 
 @media (min-width: 992px) {
-  /* line 56, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 58, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .aboutme p {
     max-width: 50%;
   }
-  /* line 59, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 61, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .aboutme img {
     float: right;
     max-width: 50%;
@@ -4384,45 +4386,45 @@ section {
 }
 
 @media (min-width: 1200px) {
-  /* line 67, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 69, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .aboutme img {
     margin-top: -120px;
   }
 }
 
-/* line 79, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 81, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* line 85, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 87, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container img {
   width: 100%;
 }
 
-/* line 88, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 90, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container h3, .portfolio .flex-container p {
   margin: 0 10px;
 }
 
-/* line 91, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 93, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container p {
   padding: 5px 0;
 }
 
-/* line 93, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 95, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container p.view {
   padding-left: 10px;
 }
 
-/* line 97, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 99, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container h2 {
   text-align: left;
 }
 
-/* line 100, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 102, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > * {
   position: relative;
   transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
@@ -4430,12 +4432,12 @@ section {
   top: 0;
 }
 
-/* line 105, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 107, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > * a {
   color: black;
 }
 
-/* line 108, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 110, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > *:hover {
   border: 1px solid #87CEEB;
   top: -10px;
@@ -4445,17 +4447,17 @@ section {
   box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 115, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 117, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .portfolio .flex-container > *:hover .view {
   text-decoration: underline;
 }
 
 @media (min-width: 992px) {
-  /* line 79, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 81, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .portfolio .flex-container {
     flex-flow: row wrap;
   }
-  /* line 122, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 124, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .portfolio .flex-container > div {
     flex: 1 0;
     min-width: calc(50% - (20px / 2));
@@ -4463,47 +4465,47 @@ section {
 }
 
 @media (min-width: 1200px) {
-  /* line 128, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 130, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .portfolio .flex-container > div {
     min-width: calc(33% - ((20px * 2) / 3));
   }
 }
 
-/* line 136, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 138, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .placeholder img {
   filter: brightness(0.25);
 }
 
-/* line 147, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 149, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .examples .wrapper > div, .examples .wrapper-nav > div {
   margin: 40px 0;
 }
 
 @media (min-width: 576px) {
-  /* line 147, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 149, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .examples .wrapper > div, .examples .wrapper-nav > div {
     border: 1px solid rgba(135, 206, 235, 0.25);
   }
 }
 
 @media (max-width: 575px) {
-  /* line 153, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 155, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .examples pre {
     margin: 0 -15px;
   }
 }
 
-/* line 157, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 159, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .examples pre code.hljs {
   background-color: rgba(135, 206, 235, 0.2);
 }
 
-/* line 161, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 163, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .examples p {
   padding: 0 10px;
 }
 
-/* line 166, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 168, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1 {
   width: 150px;
   margin: 15px auto;
@@ -4511,7 +4513,7 @@ section {
   position: relative;
 }
 
-/* line 173, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 175, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1 .arrow {
   position: absolute;
   color: #333645;
@@ -4524,7 +4526,7 @@ section {
   border-top: 50px solid;
 }
 
-/* line 184, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 186, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1 .box {
   position: absolute;
   background-color: #333645;
@@ -4534,35 +4536,35 @@ section {
   color: white;
 }
 
-/* line 191, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 193, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1 .box h2 {
   margin: 15px;
 }
 
-/* line 194, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 196, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1 .box hr {
   margin: auto;
   border-color: white;
   width: 90%;
 }
 
-/* line 200, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 202, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1:hover {
   cursor: default;
 }
 
-/* line 202, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 204, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example1:hover .arrow, .example1:hover .box {
   display: block;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .bespoke-software i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .bespoke-software > i::before {
   text-align: center;
   line-height: 2em;
@@ -4574,26 +4576,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .bespoke-software:hover {
   top: -10px;
   background-color: #67809F;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .bespoke-software:hover i::before {
   color: #67809F;
   background-color: white;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .it-support i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .it-support > i::before {
   text-align: center;
   line-height: 2em;
@@ -4605,26 +4607,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .it-support:hover {
   top: -10px;
   background-color: #4183D7;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .it-support:hover i::before {
   color: #4183D7;
   background-color: white;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .digital-marketing i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .digital-marketing > i::before {
   text-align: center;
   line-height: 2em;
@@ -4636,26 +4638,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .digital-marketing:hover {
   top: -10px;
   background-color: #2ECC71;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .digital-marketing:hover i::before {
   color: #2ECC71;
   background-color: white;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .telecoms-services i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .telecoms-services > i::before {
   text-align: center;
   line-height: 2em;
@@ -4667,26 +4669,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .telecoms-services:hover {
   top: -10px;
   background-color: #D64541;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .telecoms-services:hover i::before {
   color: #D64541;
   background-color: white;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .web-design i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .web-design > i::before {
   text-align: center;
   line-height: 2em;
@@ -4698,26 +4700,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .web-design:hover {
   top: -10px;
   background-color: #926FB1;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .web-design:hover i::before {
   color: #926FB1;
   background-color: white;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .cyber-security i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .cyber-security > i::before {
   text-align: center;
   line-height: 2em;
@@ -4729,26 +4731,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .cyber-security:hover {
   top: -10px;
   background-color: #F62459;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .cyber-security:hover i::before {
   color: #F62459;
   background-color: white;
 }
 
-/* line 232, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 234, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .developer-course i::before {
   font-size: 2em;
   content: "";
 }
 
-/* line 243, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 245, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .developer-course > i::before {
   text-align: center;
   line-height: 2em;
@@ -4760,26 +4762,26 @@ section {
   color: white;
 }
 
-/* line 253, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 255, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .developer-course:hover {
   top: -10px;
   background-color: #CE4125;
   color: white;
 }
 
-/* line 257, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 259, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 .developer-course:hover i::before {
   color: #CE4125;
   background-color: white;
 }
 
-/* line 265, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 267, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 p {
   text-align: center;
   margin: 0;
 }
 
-/* line 269, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 271, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 > div {
   display: flex;
   flex-flow: row wrap;
@@ -4787,23 +4789,23 @@ section {
   gap: 0 5px;
 }
 
-/* line 275, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 277, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .example2 > div > div {
   margin: 5px 0px;
 }
 
-/* line 287, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 289, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs h2 {
   margin-top: 40px;
 }
 
-/* line 290, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 292, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs ul {
   list-style: none;
   padding-left: 0;
 }
 
-/* line 294, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 296, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .scs img {
   position: relative;
   width: 50px;
@@ -4812,13 +4814,13 @@ section {
 }
 
 @media (min-width: 768px) {
-  /* line 301, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 303, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .scs p, .scs ul {
     padding-left: 20px;
   }
 }
 
-/* line 313, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 315, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact .flex-container {
   display: flex;
   flex-direction: column;
@@ -4826,33 +4828,33 @@ section {
 }
 
 @media (min-width: 992px) {
-  /* line 313, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 315, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact .flex-container {
     flex-direction: row;
   }
-  /* line 319, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 321, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact .flex-container > div {
     max-width: 38%;
   }
-  /* line 322, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 324, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact .flex-container > form {
     height: 100%;
   }
 }
 
-/* line 327, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 329, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact form {
   display: flex;
   flex-flow: row wrap;
   gap: 10px;
 }
 
-/* line 331, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 333, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact form label {
   position: relative;
 }
 
-/* line 333, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 335, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact form label p {
   pointer-events: none;
   position: absolute;
@@ -4864,24 +4866,24 @@ section {
   opacity: 0.5;
 }
 
-/* line 344, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 346, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact form #first, .contact form .first, .contact form #last, .contact form .last, .contact form .email, .contact form #email, .contact form .phone, .contact form #phone, .contact form #subject, .contact form .subject, .contact form #message, .contact form .message {
   width: 100%;
 }
 
 @media (min-width: 576px) {
-  /* line 348, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+  /* line 350, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
   .contact form .first, .contact form .last {
     flex: 1 0;
   }
 }
 
-/* line 353, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 355, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .contact input[type=text], .contact input[type=email] {
   height: 50px;
 }
 
-/* line 358, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 360, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 input[type="text"], input[type="email"], textarea {
   padding-left: 10px;
   transition: box-shadow 0.5s;
@@ -4889,29 +4891,29 @@ input[type="text"], input[type="email"], textarea {
   border: 1px solid black;
 }
 
-/* line 363, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 365, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   border-color: #30aadc;
   box-shadow: 0 0 10px 5px #87CEEB;
 }
 
-/* line 367, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 369, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 input[type="text"]:hover, input[type="email"]:hover, textarea:hover {
   border-color: #30aadc;
 }
 
-/* line 371, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 373, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 textarea {
   padding-top: 10px;
 }
 
-/* line 379, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 381, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .footer {
   border-top: 2px solid #87CEEB;
   text-align: center;
 }
 
-/* line 382, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
+/* line 384, ../../Users/paulr/Desktop/Netmatters/Portfolio/scss/3.layout/_2.sections.scss */
 .footer .flex-container {
   display: flex;
   justify-content: center;
