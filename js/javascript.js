@@ -3,12 +3,14 @@
 // ==========================================================================
 
 $(".banner h1").textillate({
+  autoStart: false,
   in: {
     effect: "fadeInUp",
     delay: 25,
   }
 });
 $(".banner h2").textillate({
+  autoStart: false,
   initialDelay: 300,
   in: {
     effect: "fadeInDown",
@@ -235,7 +237,12 @@ $(document).ready(function() {
   if ($(window).outerWidth() >= 768) {
     $(".sidebar").removeClass("hidden");
     $(".wrapper").addClass("wrapper-nav").removeClass("wrapper");
-  } 
+  }
+
+  // Start banner animations
+  $(".banner h1").textillate("start");
+  $(".banner h2").textillate("start");
+  
 });
 
 
