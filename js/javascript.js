@@ -109,11 +109,11 @@ function validateEmail(s) {
 s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
 if (!s) {
   return "*Required*";
-} else if (!s.match(/^[a-zA-Z0-9-.@]*$/)) {   // Only alphanumeric, hyphen, period and AT characters
+} else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {   // valid characters in email
   return "*Invalid Characters*";
 } else if (s.length > 254) {  // At most 254 characters
   return "*Too Long*";
-} else if (!s.match(/^[a-zA-Z0-9-.]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {   // Far from perfect, catches the general format of emails
+} else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {   // Far from perfect, catches the general format of emails
   return "*Invalid*";
 } else {
   return ""; // valid
