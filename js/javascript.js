@@ -76,7 +76,7 @@ function validateName(s) {
   } else if (s.length > 35) {   // Must be at most 35 characters
     return "*Too Long*";
   } else if (!s.match(/^(?!.*--|.*'')[a-zA-Z]{1}[a-zA-Z-']*[a-zA-Z]{1}$/)) {  // Must start and end with a letter, Must not contain two hyphens or apostrophe in a row
-    return "*invalid*";
+    return "*Invalid*";
   } else {
     return ""; // valid
   }
@@ -87,8 +87,11 @@ $(".first").on("focusout", function() {
   if (error) {
     if (error === "*Required*") {
       $("#first").val(""); // clean the input box to make sure placeholder is shown
+      $(".first").append(`<p>${error}</p>`);
+    } else {
+      $(".first").append(`<p>First Name: ${error}</p>`);
     }
-    $(".first").append(`<p>${error}</p>`);
+    
     $(".first p").textillate({in:{effect: "flash", sync: true}});
   }
 });
@@ -98,8 +101,10 @@ $(".last").on("focusout", function() {
   if (error) {
     if (error === "*Required*") {
       $("#last").val(""); // clean the input box to make sure placeholder is shown
+      $(".last").append(`<p>${error}</p>`);
+    } else {
+      $(".last").append(`<p>Last Name: ${error}</p>`);
     }
-    $(".last").append(`<p>${error}</p>`);
     $(".last p").textillate({in:{effect: "flash", sync: true}});
   }
 });
@@ -125,8 +130,10 @@ $(".email").on("focusout", function() {
   if (error) {
     if (error === "*Required*") {
       $("#email").val(""); // clean the input box to make sure placeholder is shown
+      $(".email").append(`<p>${error}</p>`);
+    } else {
+      $(".email").append(`<p>Email: ${error}</p>`);
     }
-    $(".email").append(`<p>${error}</p>`);
     $(".email p").textillate({in:{effect: "flash", sync: true}});
   }
 });
@@ -152,7 +159,7 @@ $("#phone").on("focusout", function() {
     if (error === "null") {   // clean the input box to make sure placeholder is shown
       $("#phone").val("");
     } else {
-      $(".phone").append(`<p>${error}</p>`);
+      $(".phone").append(`<p>Phone Number: ${error}</p>`);
       $(".phone p").textillate({in:{effect: "flash", sync: true}});
     }
   }

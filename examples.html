@@ -146,8 +146,8 @@ $service-icons: (
       content: map-get($service-icons, $service);
   }
 }</code></pre>
-            <p>A simple mixin that takes a service name and maps the appropriate icon value to the content (::before) where it is used.</p>
-            <pre><code class="language-scss">// Loop through each service to assign colors and icons
+            <p>A simple mixin that takes a service name and maps the appropriate icon value to the content (::before) where it is used.<br>(And also sets its font size)</p>
+            <pre><code class="language-scss">// Loop through each service to assign styles
 @each $service, $color in $service-colors {
     &.#{$service} {
         i {
@@ -175,7 +175,7 @@ $service-icons: (
     }
 }</code></pre>
             <p>A loop that iterates through all of the different key-pairs in the service-colors map.</p>
-            <p>Styling each icon and assigning each one its unique icon and color using the mixin from before and the $color variable from the each loop.</p>
+            <p>Styling each icon and assigning each one its unique icon and color using the mixin from before and the $color variable from the @each loop.</p>
             <p>This styles 7 different icons with the same section of code rather than having to repeat it.</p>
           </div>
           
