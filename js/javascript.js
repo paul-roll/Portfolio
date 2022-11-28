@@ -4,17 +4,25 @@
 
 $(".banner h1").textillate({
   in: {
-    effect: "tada",
+    effect: "fadeInUp",
+    delay: 25,
+  }
+});
+$(".banner h2").textillate({
+  initialDelay: 300,
+  in: {
+    effect: "fadeInDown",
+    delay: 25,
   }
 });
 $(".btn-footer").on("click", function() {
   $(".banner h1").textillate("in");
+  $(".banner h2").textillate("in");
 });
 $(".sidebar h1").on("click", function() {
   $(".banner h1").textillate("in");
+  $(".banner h2").textillate("in");
 });
-
-$(".btn-burger").removeClass("hidden");
 
 
 // ==========================================================================
