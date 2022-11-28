@@ -69,13 +69,13 @@ function validateName(s) {
   s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
   if (!s) {
     return "*Required*";
-  } else if (!s.match(/^[a-zA-Z-]*$/)) {  // Must use only letters and hyphens
+  } else if (!s.match(/^[a-zA-Z-']*$/)) {  // Must use only letter / hyphen / Apostrophe
     return "*Invalid Characters*";
   } else if (s.length < 2) {  // Must be at least 2 characters
     return "*Too Short*";
   } else if (s.length > 35) {   // Must be at most 35 characters
     return "*Too Long*";
-  } else if (!s.match(/^(?!.*--)[a-zA-Z]{1}[a-zA-Z-]*[a-zA-Z]{1}$/)) {  // Must start and end with a letter, Must not contain two hyphens in a row
+  } else if (!s.match(/^(?!.*--|.*'')[a-zA-Z]{1}[a-zA-Z-']*[a-zA-Z]{1}$/)) {  // Must start and end with a letter, Must not contain two hyphens or apostrophe in a row
     return "*invalid*";
   } else {
     return ""; // valid
