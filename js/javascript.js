@@ -139,12 +139,11 @@ function validateMessage(s) {
 }
 
 function validateButton() {
-  $(".btn-submit").attr("value","Submit");
   if ((validateName($("#first").val())) || (validateName($("#last").val())) || (validateEmail($("#email").val())) || ((validatePhone($("#phone").val())) && (validatePhone($("#phone").val()) !== "null")) || ((validateSubject($("#subject").val())) && (validateSubject($("#subject").val()) !== "null")) || (validateMessage($("#message").val()))) {
-    $(".btn-submit").css("background-color", "lightcoral");
+    $(".btn-submit").css("background-color", "lightcoral").attr("value", "Can't Submit (Check Form)");
     return false;
   } else {
-    $(".btn-submit").css("background-color", "#87CEEB");
+    $(".btn-submit").css("background-color", "#87CEEB").attr("value", "Submit");
     return true;
   }
 }
@@ -242,13 +241,11 @@ $(".message").on("focusout", function() {
 
 
 $(".btn-submit").on("click", function() {
-  if ($(".btn-submit").attr("value") === "Submit") {
+  if ($(".btn-submit").attr("value") !== "Submitted") {
     $("form *").trigger("focusout");
     if (validateButton()) {
       $(".btn-submit").css("background-color", "lightgreen").attr("value","Submitted");
       clearForm();
-    } else {
-      $(".btn-submit").attr("value","Submit");
     }
   }
 })
