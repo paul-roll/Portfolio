@@ -53,19 +53,20 @@ $(".btn-burger").on("click", function() {
 });
 
 $(window).on("click scroll", function(event) {
-  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).width() < 768)) {
+  if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).outerWidth() < 768)) {
     sidebarSlideOut();
   }
 });
 
-let prevWidth = $(window).width();
+let prevWidth = $(window).outerWidth();
+
 $(window).on("resize", function(event) {
-    if ((prevWidth < 768) && ($(window).width() >= 768)) {
+    if ((prevWidth < 768) && ($(window).outerWidth() >= 768)) {
       sidebarSlideIn();
-    } else if ((prevWidth >= 768) && ($(window).width() < 768)) {
+    } else if ((prevWidth >= 768) && ($(window).outerWidth() < 768)) {
       sidebarSlideOut();
     }
-  prevWidth = $(window).width();
+  prevWidth = $(window).outerWidth();
 });
 
 
@@ -231,7 +232,7 @@ $(document).ready(function() {
   $("form *").trigger("focusout");
 
   // start the sidebar out if screen is wider than 768
-  if ($(window).width() >= 768) {
+  if ($(window).outerWidth() >= 768) {
     $(".sidebar").removeClass("hidden");
     $(".wrapper").addClass("wrapper-nav").removeClass("wrapper");
   } 
