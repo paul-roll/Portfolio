@@ -271,6 +271,11 @@ $(document).ready(function() {
   $(".banner h1").textillate("start");
   $(".banner h2").textillate("start");
   
+  // Prevent the form from reloading the page on submit
+  $("form").submit(function(e) {
+    e.preventDefault();
+  });
+
 });
 
 
