@@ -1,3 +1,7 @@
+// ==========================================================================
+// Banner Header Effect
+// ==========================================================================
+
 $(".banner h1").textillate({
   in: {
     effect: "tada",
@@ -11,6 +15,11 @@ $(".sidebar h1").on("click", function() {
 });
 
 $(".btn-burger").removeClass("hidden");
+
+
+// ==========================================================================
+// Sidebar Animation
+// ==========================================================================
 
 function sidebarSlideIn() {
   $(".sidebar").stop().css("left", "-200px").removeClass("hidden").animate({left: "+=200"}, 500, function() {
@@ -35,7 +44,6 @@ $(".btn-burger").on("click", function() {
   
 });
 
-
 $(window).on("click scroll", function(event) {
   if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).width() < 768)) {
     sidebarSlideOut();
@@ -52,6 +60,10 @@ $(window).on("resize", function(event) {
   prevWidth = $(window).width();
 });
 
+
+// ==========================================================================
+// Form Validation
+// ==========================================================================
 
 function validateName(s) {
   s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
@@ -92,7 +104,6 @@ $(".last").on("focusout", function() {
   }
 });
 
-
 function validateEmail(s) {
 //
 s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
@@ -119,7 +130,6 @@ $(".email").on("focusout", function() {
     $(".email p").textillate({in:{effect: "flash", sync: true}});
   }
 });
-
 
 function validatePhone(s) {
   s = s.replace(/-+|\s+/gm,''); // remove ALL spaces and hypens
@@ -190,14 +200,15 @@ $(".message").on("focusout", function() {
 });
 
 
-
 $(".btn-submit").on("click", function() {
   $("form *").trigger("focusout");
 })
 
 
+// ==========================================================================
+// Page Load Complete
+// ==========================================================================
 
-// on page load
 $(document).ready(function() {
 
   // trigger the focusout event on all form elements
