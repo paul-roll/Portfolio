@@ -337,12 +337,12 @@ section {
             position: relative;
             p {
                 pointer-events: none;
-                position: absolute;
+                // position: absolute;
                 color: red;
                 margin: 0;
                 padding: 4px 0 0 20px;
                 font-size: 0.77778em;
-                bottom: 2px;
+                // bottom: 2px;
                 opacity: 0.5;
             }
         }
@@ -375,6 +375,7 @@ input[type="text"], input[type="email"], textarea {
 }
 textarea {
     padding-top: 10px;
+    resize: none;
 }
 
 // ==========================================================================

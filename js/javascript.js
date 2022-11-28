@@ -92,34 +92,6 @@ function validateName(s) {
     return ""; // valid
   }
 }
-$(".first").on("focusout", function() {
-  error = validateName($("#first").val())
-  $(".first p").remove();
-  if (error) {
-    if (error === "*Required*") {
-      $("#first").val(""); // clean the input box to make sure placeholder is shown
-      $(".first").append(`<p>${error}</p>`);
-    } else {
-      $(".first").append(`<p>First Name: ${error}</p>`);
-    }
-    
-    $(".first p").textillate({in:{effect: "flash", sync: true}});
-  }
-});
-$(".last").on("focusout", function() {
-  error = validateName($("#last").val())
-  $(".last p").remove();
-  if (error) {
-    if (error === "*Required*") {
-      $("#last").val(""); // clean the input box to make sure placeholder is shown
-      $(".last").append(`<p>${error}</p>`);
-    } else {
-      $(".last").append(`<p>Last Name: ${error}</p>`);
-    }
-    $(".last p").textillate({in:{effect: "flash", sync: true}});
-  }
-});
-
 function validateEmail(s) {
 //
 s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
@@ -135,20 +107,6 @@ if (!s) {
   return ""; // valid
 }
 }
-$(".email").on("focusout", function() {
-  error = validateEmail($("#email").val())
-  $(".email p").remove();
-  if (error) {
-    if (error === "*Required*") {
-      $("#email").val(""); // clean the input box to make sure placeholder is shown
-      $(".email").append(`<p>${error}</p>`);
-    } else {
-      $(".email").append(`<p>Email: ${error}</p>`);
-    }
-    $(".email p").textillate({in:{effect: "flash", sync: true}});
-  }
-});
-
 function validatePhone(s) {
   s = s.replace(/-+|\s+/gm,''); // remove ALL spaces and hypens
   if (!s) {
@@ -163,6 +121,86 @@ function validatePhone(s) {
     return ""; // valid
   }
 }
+function validateSubject(s) {
+  s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
+  if (!s) {
+    return "null";
+  } else {
+    return ""; // valid
+  }
+}
+function validateMessage(s) {
+  s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
+  if (!s) {
+    return "*Required*";
+  } else {
+    return ""; // valid
+  }
+}
+
+function validateButton() {
+  $(".btn-submit").attr("value","Submit");
+  if ((validateName($("#first").val())) || (validateName($("#last").val())) || (validateEmail($("#email").val())) || ((validatePhone($("#phone").val())) && (validatePhone($("#phone").val()) !== "null")) || ((validateSubject($("#subject").val())) && (validateSubject($("#subject").val()) !== "null")) || (validateMessage($("#message").val()))) {
+    $(".btn-submit").css("background-color", "lightcoral");
+    return false;
+  } else {
+    $(".btn-submit").css("background-color", "#87CEEB");
+    return true;
+  }
+}
+
+function clearForm() {
+  $("#first").val("");
+  $("#last").val("");
+  $("#email").val("");
+  $("#phone").val("");
+  $("#subject").val("");
+  $("#message").val("");
+}
+
+$(".first").on("focusout", function() {
+  error = validateName($("#first").val())
+  $(".first p").remove();
+  if (error) {
+    if (error === "*Required*") {
+      $("#first").val(""); // clean the input box to make sure placeholder is shown
+      $(".first").append(`<p>${error}</p>`);
+    } else {
+      $(".first").append(`<p>First Name: ${error}</p>`);
+    }
+    
+    $(".first p").textillate({in:{effect: "flash", sync: true}});
+  }
+  validateButton();
+});
+$(".last").on("focusout", function() {
+  error = validateName($("#last").val())
+  $(".last p").remove();
+  if (error) {
+    if (error === "*Required*") {
+      $("#last").val(""); // clean the input box to make sure placeholder is shown
+      $(".last").append(`<p>${error}</p>`);
+    } else {
+      $(".last").append(`<p>Last Name: ${error}</p>`);
+    }
+    $(".last p").textillate({in:{effect: "flash", sync: true}});
+  }
+  validateButton();
+});
+$(".email").on("focusout", function() {
+  error = validateEmail($("#email").val())
+  $(".email p").remove();
+  if (error) {
+    if (error === "*Required*") {
+      $("#email").val(""); // clean the input box to make sure placeholder is shown
+      $(".email").append(`<p>${error}</p>`);
+    } else {
+      $(".email").append(`<p>Email: ${error}</p>`);
+    }
+    $(".email p").textillate({in:{effect: "flash", sync: true}});
+  }
+  validateButton();
+});
 $("#phone").on("focusout", function() {
   error = validatePhone($("#phone").val())
   $(".phone p").remove();
@@ -174,16 +212,8 @@ $("#phone").on("focusout", function() {
       $(".phone p").textillate({in:{effect: "flash", sync: true}});
     }
   }
+  validateButton();
 });
-
-function validateSubject(s) {
-  s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
-  if (!s) {
-    return "null";
-  } else {
-    return ""; // valid
-  }
-}
 $("#subject").on("focusout", function() {
   error = validateSubject($("#subject").val())
   $(".subject p").remove();
@@ -195,16 +225,8 @@ $("#subject").on("focusout", function() {
       $(".subject p").textillate({in:{effect: "flash", sync: true}});
     }
   }
+  validateButton();
 });
-
-function validateMessage(s) {
-  s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
-  if (!s) {
-    return "*Required*";
-  } else {
-    return ""; // valid
-  }
-}
 $(".message").on("focusout", function() {
   error = validateMessage($("#message").val())
   $(".message p").remove();
@@ -215,11 +237,20 @@ $(".message").on("focusout", function() {
     $(".message").append(`<p>${error}</p>`);
     $(".message p").textillate({in:{effect: "flash", sync: true}});
   }
+  validateButton();
 });
 
 
 $(".btn-submit").on("click", function() {
-  $("form *").trigger("focusout");
+  if ($(".btn-submit").attr("value") === "Submit") {
+    $("form *").trigger("focusout");
+    if (validateButton()) {
+      $(".btn-submit").css("background-color", "lightgreen").attr("value","Submitted");
+      clearForm();
+    } else {
+      $(".btn-submit").attr("value","Submit");
+    }
+  }
 })
 
 
