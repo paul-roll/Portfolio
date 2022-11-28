@@ -3,7 +3,7 @@
 // ==========================================================================
 
 section {
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 @each $section, $color in $background-colors {
@@ -167,6 +167,7 @@ section {
 }
 
 .example1{
+    // overflow: inherit;
     width: 150px;
     margin: 15px auto;
     text-align: center;
@@ -185,6 +186,7 @@ section {
         border-top: ($arrow-width / 2) solid;
     }
     .box {
+        
         position: absolute;
         background-color: #333645;
         width: $box-width;
