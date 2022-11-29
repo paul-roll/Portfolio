@@ -1,7 +1,8 @@
 // ==========================================================================
-// Banner Header Effect
+// Banner Text Effect
 // ==========================================================================
 
+// Textillate Animations
 $(".banner h1").textillate({
   autoStart: false,
   in: {
@@ -17,6 +18,8 @@ $(".banner h2").textillate({
     delay: 25,
   }
 });
+
+// Triggers to re-animate banner text
 $(".btn-footer").on("click", function() {
   $(".banner h1").textillate("in");
   $(".banner h2").textillate("in");
@@ -31,6 +34,7 @@ $(".sidebar h1").on("click", function() {
 // Sidebar Animation
 // ==========================================================================
 
+// slide the sidebar and flip the classes
 function sidebarSlideIn() {
   $(".sidebar").stop().css("left", "-200px").removeClass("hidden").animate({left: "+=200"}, 500, function() {
     $(".sidebar").css("left", "");
@@ -44,24 +48,25 @@ function sidebarSlideOut() {
   $(".wrapper-nav").addClass("wrapper").removeClass("wrapper-nav");
 }
 
+// btn-burger button click 
 $(".btn-burger").on("click", function() {
-
   if ($(".sidebar").hasClass("hidden")) {
     sidebarSlideIn();
   } else {
     sidebarSlideOut();
   }
-  
 });
 
+// catch all scroll and click events to dismiss sidebar on screen widths under 768
+// exclude clicks on btn-burger
 $(window).on("click scroll", function(event) {
   if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).outerWidth() < 768)) {
     sidebarSlideOut();
   }
 });
 
+// catch resize events, track changes in screen width so that the functions only fire a single time
 let prevWidth = $(window).outerWidth();
-
 $(window).on("resize", function(event) {
     if ((prevWidth < 768) && ($(window).outerWidth() >= 768)) {
       sidebarSlideIn();
@@ -76,6 +81,7 @@ $(window).on("resize", function(event) {
 // Form Validation
 // ==========================================================================
 
+// Validation functions for each input type, returns error message or empty string when valid, for non-required "null" triggers whitespace clearing
 function validateName(s) {
   s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
   if (!s) {
@@ -138,6 +144,8 @@ function validateMessage(s) {
   }
 }
 
+// function to check all form fields and update the submit button
+// returns false if any of the fields return an error message (with the exception that "null" on phone/subject don't count)
 function validateButton() {
   if ((validateName($("#first").val())) || (validateName($("#last").val())) || (validateEmail($("#email").val())) || ((validatePhone($("#phone").val())) && (validatePhone($("#phone").val()) !== "null")) || ((validateSubject($("#subject").val())) && (validateSubject($("#subject").val()) !== "null")) || (validateMessage($("#message").val()))) {
     $(".btn-submit").css("background-color", "lightcoral").attr("value", "Can't Submit (Check Form)");
@@ -148,6 +156,7 @@ function validateButton() {
   }
 }
 
+// clear all form input boxes.
 function clearForm() {
   $("#first").val("");
   $("#last").val("");
@@ -157,6 +166,7 @@ function clearForm() {
   $("#message").val("");
 }
 
+// Events that trigger when each input box looses focus, flash its own error and update the button
 $(".first").on("focusout", function() {
   error = validateName($("#first").val())
   $(".first p").remove();
@@ -167,7 +177,6 @@ $(".first").on("focusout", function() {
     } else {
       $(".first").append(`<p>First Name: ${error}</p>`);
     }
-    
     $(".first p").textillate({in:{effect: "flash", sync: true}});
   }
   validateButton();
@@ -239,11 +248,13 @@ $(".message").on("focusout", function() {
   validateButton();
 });
 
-
+// event when submit button is clicked, prevent anything from happening if it still shows "Submitted", otherwise;
+// trigger every input's focusout event to make any errors flash, then if validateButton returns true action the form-submit
 $(".btn-submit").on("click", function() {
   if ($(".btn-submit").attr("value") !== "Submitted") {
     $("form *").trigger("focusout");
     if (validateButton()) {
+      // Add Form Submit Code Here
       $(".btn-submit").css("background-color", "lightgreen").attr("value","Submitted");
       clearForm();
     }
@@ -258,7 +269,7 @@ $(".btn-submit").on("click", function() {
 $(document).ready(function() {
 
   // trigger the focusout event on all form elements
-  // to make sure they show *Required* errors
+  // to make sure they show *Required* 'error' from the start
   $("form *").trigger("focusout");
 
   // start the sidebar out if screen is wider than 768
