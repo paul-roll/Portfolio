@@ -67,7 +67,7 @@ $(window).on("click scroll", function(event) {
 
 // catch resize events, track changes in screen width so that the functions only fire a single time
 let prevWidth = $(window).outerWidth();
-$(window).on("resize", function(event) {
+$(window).on("resize", function() {
     if ((prevWidth < 768) && ($(window).outerWidth() >= 768)) {
       sidebarSlideIn();
     } else if ((prevWidth >= 768) && ($(window).outerWidth() < 768)) {
@@ -168,7 +168,7 @@ function clearForm() {
 
 // Events that trigger when each input box looses focus, flash its own error and update the button
 $(".first").on("focusout", function() {
-  error = validateName($("#first").val())
+  const error = validateName($("#first").val());
   $(".first p").remove();
   if (error) {
     if (error === "*Required*") {
@@ -182,7 +182,7 @@ $(".first").on("focusout", function() {
   validateButton();
 });
 $(".last").on("focusout", function() {
-  error = validateName($("#last").val())
+  const error = validateName($("#last").val());
   $(".last p").remove();
   if (error) {
     if (error === "*Required*") {
@@ -196,7 +196,7 @@ $(".last").on("focusout", function() {
   validateButton();
 });
 $(".email").on("focusout", function() {
-  error = validateEmail($("#email").val())
+  const error = validateEmail($("#email").val());
   $(".email p").remove();
   if (error) {
     if (error === "*Required*") {
@@ -210,7 +210,7 @@ $(".email").on("focusout", function() {
   validateButton();
 });
 $("#phone").on("focusout", function() {
-  error = validatePhone($("#phone").val())
+  const error = validatePhone($("#phone").val());
   $(".phone p").remove();
   if (error) {
     if (error === "null") {   // clean the input box to make sure placeholder is shown
@@ -223,7 +223,7 @@ $("#phone").on("focusout", function() {
   validateButton();
 });
 $("#subject").on("focusout", function() {
-  error = validateSubject($("#subject").val())
+  const error = validateSubject($("#subject").val());
   $(".subject p").remove();
   if (error) {
     if (error === "null") {   // clean the input box to make sure placeholder is shown
@@ -236,7 +236,7 @@ $("#subject").on("focusout", function() {
   validateButton();
 });
 $(".message").on("focusout", function() {
-  error = validateMessage($("#message").val())
+  const error = validateMessage($("#message").val());
   $(".message p").remove();
   if (error) {
     if (error === "*Required*") {
@@ -259,7 +259,7 @@ $(".btn-submit").on("click", function() {
       clearForm();
     }
   }
-})
+});
 
 
 // ==========================================================================
