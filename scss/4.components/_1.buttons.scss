@@ -15,6 +15,16 @@
     }
 }
 
+.btn-test {
+    @extend %btn;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: lighten($color-primary, 10%);
+    &:hover {
+        background-color: darken($color-primary, 20%);
+    }
+}
+
 .btn-submit {
     @extend %btn;
     border: 1px solid black;

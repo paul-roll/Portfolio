@@ -20,7 +20,7 @@
   <body>
 
     <header>
-
+      <h1 id="message"></h1>
       <div class="burger">
         <a class="btn-burger"><i class="fa fa-bars"></i></a>
       </div>
@@ -67,18 +67,18 @@
           <a id="examples"></a>
           <h2>Coding Examples</h2>
             <div>
-            <p class="bold">Netmatters Reflection:<br>Mouseover Popup</p>
-            <p>Sassy Cascading Style Sheets</p>
-            <div class="example1 bold">
-              <p>Example<br>(Mouseover Here)</p>
-              <div class="hidden arrow"></div>
-              <div class="hidden box">
-                <h2>Example Title</h2>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas.</p>
+              <p class="bold">Netmatters Reflection:<br>Mouseover Popup</p>
+              <p>Sassy Cascading Style Sheets</p>
+              <div class="example1 bold">
+                <p>Example<br>(Mouseover Here)</p>
+                <div class="hidden arrow"></div>
+                <div class="hidden box">
+                  <h2>Example Title</h2>
+                  <hr>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas.</p>
+                </div>
               </div>
-            </div>
-            <pre><code class="language-scss">$arrow-width: 100px;
+              <pre><code class="language-scss">$arrow-width: 100px;
 $box-width: 240px;
 .arrow {
     position: absolute;
@@ -103,27 +103,27 @@ $box-width: 240px;
     // Align center to relative object
     left: calc(50% - (#{$box-width} / 2));
 }</code></pre>
-            <p>Style and position a pair of objects for showing content in.</p>
-            <p>Manipulates the way that borders intersect to create a triangle by turning the sides transparent.</p>
-            <p>Uses the calc() function to do math on positions and lengths to calculate the dimensions relative to one another.</p>
-          </div>
-
-          <div>
-            <p class="bold">Netmatters Reflection:<br>Assigning styles to each icon</p>
-            <p>Sassy Cascading Style Sheets</p>
-            <div class="example2 bold">
-              <p>Example</p>
-              <div>
-                <div class="bespoke-software"><i class="fa-solid"></i></div>
-                <div class="it-support"><i class="fa-solid"></i></div>
-                <div class="digital-marketing"><i class="fa-solid"></i></div>
-                <div class="telecoms-services"><i class="fa-solid"></i></div>
-                <div class="web-design"><i class="fa-solid"></i></div>
-                <div class="cyber-security"><i class="fa-solid"></i></div>
-                <div class="developer-course"><i class="fa-solid"></i></div>
-              </div>
+              <p>Style and position a pair of objects for showing content in.</p>
+              <p>Manipulates the way that borders intersect to create a triangle by turning the sides transparent.</p>
+              <p>Uses the calc() function to do math on positions and lengths to calculate the dimensions relative to one another.</p>
             </div>
-            <pre><code class="language-scss">// Maps
+
+            <div>
+              <p class="bold">Netmatters Reflection:<br>Assigning styles to each icon</p>
+              <p>Sassy Cascading Style Sheets</p>
+              <div class="example2 bold">
+                <p>Example</p>
+                <div>
+                  <div class="bespoke-software"><i class="fa-solid"></i></div>
+                  <div class="it-support"><i class="fa-solid"></i></div>
+                  <div class="digital-marketing"><i class="fa-solid"></i></div>
+                  <div class="telecoms-services"><i class="fa-solid"></i></div>
+                  <div class="web-design"><i class="fa-solid"></i></div>
+                  <div class="cyber-security"><i class="fa-solid"></i></div>
+                  <div class="developer-course"><i class="fa-solid"></i></div>
+                </div>
+              </div>
+              <pre><code class="language-scss">// Maps
 $service-colors: (
   'bespoke-software':     #67809F,    // hoki
   'it-support':           #4183D7,    // havelock-blue
@@ -182,7 +182,60 @@ $service-icons: (
             <p>Styling each icon and assigning each one its unique icon and color using the mixin from before and the $color variable from the @each loop.</p>
             <p>This styles 7 different icons with the same section of code rather than having to repeat it.</p>
           </div>
-          
+
+          <div>
+            <p class="bold">JavaScript Array Reflection:<br>Notifications and Validation</p>
+            <p>JavaScript</p>
+            <div class="example3 bold">
+              <p>Example</p>
+              <form>
+                <input type="email" placeholder="Email"/><input class="btn-test" type="submit" value="Test"/>
+              </form>
+              <div>
+
+              </div>
+            </div>
+            <pre><code class="language-javascript">// show a popup message briefly at the bottom of the screen
+let messageBusy = false;
+function showMessage(message) {
+  if (!messageBusy) {
+      messageBusy = true;
+      $("#message").html(message);
+      $("#message").slideDown(500).delay(2000).slideUp(500, function() {
+          messageBusy = false;
+      });
+  }
+}</code></pre>
+            <p>A function to display an animated pop notification at the bottom of the screen.</p>
+            <p>Uses the messageBusy variable to ignore any further message attempts until it has finished animating.</p>
+            <pre><code class="language-javascript">// return true when email validates OK
+function validateEmail(email) {
+  // Empty email
+  if (!email) {
+      showMessage("An Email Is Required");
+      return false;
+  // Invalid characters in email
+  } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {
+      showMessage("Invalid Characters In Email");
+      return false;
+  // At most 254 Characters
+  } else if (email.length > 254) {
+      showMessage("Email Is Too Long");
+      return false;
+  // Far from perfect, catches the general format of emails
+  } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {
+      showMessage("Invalid Email");
+  // No problems
+  } else {
+    showMessage("Example Validated OK"); // Added for this example
+    return true;
+  }
+}</code></pre>
+            <p>A function to check the validity of the given email address, returns true only when it is valid.</p>
+            <p>A series of conditions are checked in order and the first one to fail triggers the message function from before.</p>
+            <p>The code calling this function would then execute other things based on the true or false response.</p>
+          </div>
+
         </div>
       </section>
 

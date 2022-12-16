@@ -261,6 +261,45 @@ $(".btn-submit").on("click", function() {
   }
 });
 
+// ==========================================================================
+// For the code examples
+// ==========================================================================
+
+// show a popup message briefly at the bottom of the screen
+let messageBusy = false;
+function showMessage(message) {
+  if (!messageBusy) {
+      messageBusy = true;
+      $("#message").html(message);
+      $("#message").slideDown(500).delay(2000).slideUp(500, function() {
+          messageBusy = false;
+      });
+
+  }
+}
+
+// return true when email validates OK
+function exampleValidateEmail(email) {
+  if (!email) {
+      showMessage("An Email Is Required");
+      return false;
+  } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {   // Invalid characters in email
+      showMessage("Invalid Characters In Email");
+      return false;
+  } else if (email.length > 254) {  // At most 254 Characters
+      showMessage("Email Is Too Long");
+      return false;
+  } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {   // Far from perfect, catches the general format of emails
+      showMessage("Invalid Email");
+  } else {
+    showMessage("Example Validated OK"); //Just for this example
+      return true;
+  }
+}
+
+$(".btn-test").on("click", function() {
+  exampleValidateEmail($(".example3 input[type=email]").val());
+});
 
 // ==========================================================================
 // Page Load Complete
