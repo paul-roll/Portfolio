@@ -147,11 +147,13 @@ function validateMessage(s) {
 // function to check all form fields and update the submit button
 // returns false if any of the fields return an error message (with the exception that "null" on phone/subject don't count)
 function validateButton() {
+  submitted = false;
+  $("#successMessage").remove();
   if ((validateName($("#first").val())) || (validateName($("#last").val())) || (validateEmail($("#email").val())) || ((validatePhone($("#phone").val())) && (validatePhone($("#phone").val()) !== "null")) || ((validateSubject($("#subject").val())) && (validateSubject($("#subject").val()) !== "null")) || (validateMessage($("#message").val()))) {
-    $(".btn-submit").css("background-color", "lightcoral").attr("value", "Can't Submit (Check Form)");
+    $(".btn-submit").css("background-color", "lightcoral");
     return false;
   } else {
-    $(".btn-submit").css("background-color", "#87CEEB").attr("value", "Submit");
+    $(".btn-submit").css("background-color", "#87CEEB");
     return true;
   }
 }
@@ -250,12 +252,16 @@ $(".message").on("focusout", function() {
 
 // event when submit button is clicked, prevent anything from happening if it still shows "Submitted", otherwise;
 // trigger every input's focusout event to make any errors flash, then if validateButton returns true action the form-submit
+let sumbitted = false;
 $(".btn-submit").on("click", function() {
-  if ($(".btn-submit").attr("value") !== "Submitted") {
+  // if ($(".btn-submit").attr("value") !== "Submitted") {
+  if (!submitted) {
     $("form *").trigger("focusout");
     if (validateButton()) {
       // Add Form Submit Code Here
-      $(".btn-submit").css("background-color", "lightgreen").attr("value","Submitted");
+      $(".btn-submit").css("background-color", "lightgreen").after(`<p id="successMessage">Your message has been sent!</p>`);
+      submitted = true;
+      showMessage("Sent");
       clearForm();
     }
   }
@@ -270,8 +276,8 @@ let messageBusy = false;
 function showMessage(message) {
   if (!messageBusy) {
       messageBusy = true;
-      $("#message").html(message);
-      $("#message").slideDown(500).delay(2000).slideUp(500, function() {
+      $("#popup").html(message);
+      $("#popup").slideDown(500).delay(2000).slideUp(500, function() {
           messageBusy = false;
       });
 
