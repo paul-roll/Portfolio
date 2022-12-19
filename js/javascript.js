@@ -261,7 +261,6 @@ $(".btn-submit").on("click", function() {
       // Add Form Submit Code Here
       $(".btn-submit").css("background-color", "lightgreen").after(`<p id="successMessage">Your message has been sent!</p>`);
       submitted = true;
-      showMessage("Sent");
       clearForm();
     }
   }
