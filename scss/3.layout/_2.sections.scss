@@ -322,6 +322,14 @@ section {
     display: none;
 }
 
+.example4 {
+    img {
+        @media (max-width: $breakpoint-lg) {
+            width: 100%;
+        }
+    }
+}
+
 
 // ==========================================================================
 //  SCS Layout
