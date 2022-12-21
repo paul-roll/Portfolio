@@ -236,6 +236,28 @@ function validateEmail(email) {
             <p>The code calling this function would then execute other things based on the true or false response.</p>
           </div>
 
+          <div>
+            <p class="bold">TODO:<br>TODO</p>
+            <p>TODO</p>
+            <div class="example3 bold">
+              <p>Example</p>
+            </div>
+            <pre><code class="sql">// Styling example from highlightjs.org
+CREATE TABLE "topic" (
+  "id" integer NOT NULL PRIMARY KEY,
+  "forum_id" integer NOT NULL,
+  "subject" varchar(255) NOT NULL
+);
+ALTER TABLE "topic"
+ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id")
+REFERENCES "forum" ("id");
+
+-- Initials
+insert into "topic" ("forum_id", "subject")
+values (2, 'D''artagnian');</code></pre>
+            <p>TODO.</p>
+          </div>
+
         </div>
       </section>
 
