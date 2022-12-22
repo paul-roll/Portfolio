@@ -240,22 +240,34 @@ function validateEmail(email) {
             <p class="bold">TODO:<br>TODO</p>
             <p>TODO</p>
             <div class="example4 bold">
-              <p>Example</p>
+              <p>TODO</p>
               <img src="img/sqltables.jpg" alt="TODO">
             </div>
-            <pre><code class="sql">// SQL Styling example from highlightjs.org
-CREATE TABLE "topic" (
-  "id" integer NOT NULL PRIMARY KEY,
-  "forum_id" integer NOT NULL,
-  "subject" varchar(255) NOT NULL
-);
-ALTER TABLE "topic"
-ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id")
-REFERENCES "forum" ("id");
+            <p>TODO.</p>
+            <pre><code class="sql">SELECT movie.mov_title AS "Title", movie.mov_year AS "Year", rating."Average Rating"
+FROM movie
 
--- Initials
-insert into "topic" ("forum_id", "subject")
-values (2, 'D''artagnian');</code></pre>
+INNER JOIN (
+  SELECT ROUND(AVG(rev_stars),1) AS "Average Rating", mov_id
+  FROM rating
+  GROUP BY mov_id
+  HAVING AVG(rev_stars) >= 8
+) AS rating ON movie.mov_id = rating.mov_id
+
+ORDER BY rating."Average Rating" DESC</code></pre>
+            <p>TODO.</p>
+            <table><tbody>
+              <tr><th>Title</th><th>Year</th><th>Average Rating</th></tr>
+              <tr><td>The Usual Suspects </td><td>1995</td><td>8.6</td></tr>
+              <tr><td>Princess Mononoke </td><td>1997</td><td>8.4</td></tr>
+              <tr><td>Aliens </td><td>1986</td><td>8.4</td></tr>
+              <tr><td>Vertigo </td><td>1958</td><td>8.4</td></tr>
+              <tr><td>Lawrence of Arabia </td><td>1962</td><td>8.3</td></tr>
+              <tr><td>Blade Runner </td><td>1982</td><td>8.2</td></tr>
+              <tr><td>Donnie Darko </td><td>2001</td><td>8.1</td></tr>
+              <tr><td>Annie Hall </td><td>1977</td><td>8.1</td></tr>
+              <tr><td>Slumdog Millionaire </td><td>2008</td><td>8.0</td></tr>
+            </tbody></table>
             <p>TODO.</p>
           </div>
 

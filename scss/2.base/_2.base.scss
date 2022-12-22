@@ -13,7 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 
-p, form, li {                                       // Adjust font for paragraph and form elements
+p, form, li, table {                            // Adjust font for paragraph and form elements
     font-family: 'Alegreya Sans', sans-serif;   // make Alegreya-Sans the default font for readability
     font-size: 1.125em;
 }

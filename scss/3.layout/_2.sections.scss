@@ -329,6 +329,16 @@ section {
         }
     }
 }
+table {
+    margin-left: 10px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    font-weight: bold;
+}
 
 
 // ==========================================================================
