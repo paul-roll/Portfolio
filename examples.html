@@ -236,14 +236,12 @@ function validateEmail(email) {
             <p>The code calling this function would then execute other things based on the true or false response.</p>
           </div>
 
-          <div>
-            <p class="bold">TODO:<br>TODO</p>
-            <p>TODO</p>
-            <div class="example4 bold">
-              <p>TODO</p>
-              <img src="img/sqltables.jpg" alt="TODO">
-            </div>
-            <p>TODO.</p>
+          <div class="example4">
+            <p class="bold">Database Challenge:<br>Querying a Movie Database</p>
+            <p>SQL</p>
+            <img src="img/sqltables.jpg" alt="TODO">
+            <p>A visual representation of the tables and their relationships in our example Movies Database.</p>
+            <p>Of interest is the 1 movie to many rating(s) relationship.</p>
             <pre><code class="sql">SELECT movie.mov_title AS "Title", movie.mov_year AS "Year", rating."Average Rating"
 FROM movie
 
@@ -255,8 +253,11 @@ INNER JOIN (
 ) AS rating ON movie.mov_id = rating.mov_id
 
 ORDER BY rating."Average Rating" DESC</code></pre>
-            <p>TODO.</p>
-            <table><tbody>
+            <p>Firstly the query selects the columns to display in the final results table, and aliases them to heading names.</p>
+            <p>Initially it selects from the movie table, and then performs an inner join onto a ratings sub query, meaning that any movies not returned by this sub query will not show up in the final results.</p>
+            <p>This sub query groups all the ratings by their movie ID, and then generates an average rating for each movie, using this value to both filter the results to only movies with an average rating of over 8, and to round it to 1 decimal place as the selected "Average Rating" value.</p>
+            <p>Finally the results are ordered by the average rating in descending order.</p>
+            <table class="example4"><tbody>
               <tr><th>Title</th><th>Year</th><th>Average Rating</th></tr>
               <tr><td>The Usual Suspects </td><td>1995</td><td>8.6</td></tr>
               <tr><td>Princess Mononoke </td><td>1997</td><td>8.4</td></tr>
@@ -268,7 +269,7 @@ ORDER BY rating."Average Rating" DESC</code></pre>
               <tr><td>Annie Hall </td><td>1977</td><td>8.1</td></tr>
               <tr><td>Slumdog Millionaire </td><td>2008</td><td>8.0</td></tr>
             </tbody></table>
-            <p>TODO.</p>
+            <p>The final table showing Title, Year and Average Rating, with only ratings above 8, sorted by rating.</p>
           </div>
 
         </div>
