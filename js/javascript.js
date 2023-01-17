@@ -254,6 +254,7 @@ $("form").submit(function(e) {
 		// submit here
     } else {
         e.preventDefault();
+		$('form [class*=error]:first').focus();
     }
 });
 
