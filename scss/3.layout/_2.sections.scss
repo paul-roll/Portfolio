@@ -432,6 +432,9 @@ input[type="text"], input[type="email"], textarea {
     &:hover {
         border-color: darken($color-primary, 20%);
     }
+    &.error {
+        border: 1px solid red;
+    }
 }
 textarea {
     padding-top: 10px;
