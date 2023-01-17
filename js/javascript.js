@@ -85,15 +85,15 @@ $(window).on("resize", function() {
 function validateName(s) {
     s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
     if (!s) {
-        return "*Required*";
+        return " is required.";
     } else if (!s.match(/^[a-zA-Z-']*$/)) {    // Must use only letter / hyphen / Apostrophe
-        return "*Invalid Characters*";
+        return " contains invalid characters.";
     } else if (s.length < 2) {    // Must be at least 2 characters
-        return "*Too Short*";
+        return " is too short.";
     } else if (s.length > 35) {     // Must be at most 35 characters
-        return "*Too Long*";
+        return " is too long.";
     } else if (!s.match(/^(?!.*--|.*'')[a-zA-Z]{1}[a-zA-Z-']*[a-zA-Z]{1}$/)) {    // Must start and end with a letter, Must not contain two hyphens or apostrophe in a row
-        return "*Invalid*";
+        return " is invalid.";
     } else {
         return ""; // valid
     }
@@ -102,13 +102,13 @@ function validateEmail(s) {
 //
 s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
 if (!s) {
-    return "*Required*";
+    return " is required.";
 } else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {     // valid characters in email
-    return "*Invalid Characters*";
+    return " contains invalid characters.";
 } else if (s.length > 254) {    // At most 254 characters
-    return "*Too Long*";
+    return " is too long.";
 } else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {     // Far from perfect, catches the general format of emails
-    return "*Invalid*";
+    return " is invalid.";
 } else {
     return ""; // valid
 }
@@ -118,11 +118,11 @@ function validatePhone(s) {
     if (!s) {
         return "null";
     } else if (!s.match(/^[0-9]*$/)) {
-        return "*Invalid Characters*";
+        return " contains invalid characters.";
     } else if (s.length < 11) {
-        return "*Too Short*";
+        return " is too short.";
     } else if (s.length > 12) {
-        return "*Too Long*";
+        return " is too long.";
     } else {
         return ""; // valid
     }
@@ -131,6 +131,8 @@ function validateSubject(s) {
     s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
     if (!s) {
         return "null";
+	} else if (s.length > 254) {    // At most 254 characters
+		return " is too long.";
     } else {
         return ""; // valid
     }
@@ -138,9 +140,9 @@ function validateSubject(s) {
 function validateMessage(s) {
     s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
     if (!s) {
-        return "*Required*";
+        return " is required.";
 	} else if (s.length < 5) {
-        return "*Too Short*";
+        return " is too short.";
     } else {
         return ""; // valid
     }
@@ -149,6 +151,7 @@ function validateMessage(s) {
 // function to check all form fields and update the submit button
 // returns false if any of the fields return an error message (with the exception that "null" on phone/subject don't count)
 function validateForm() {
+	$("form *").trigger("input");
     if ((validateName($("#first").val())) || (validateName($("#last").val())) || (validateEmail($("#email").val())) || ((validatePhone($("#phone").val())) && (validatePhone($("#phone").val()) !== "null")) || ((validateSubject($("#subject").val())) && (validateSubject($("#subject").val()) !== "null")) || (validateMessage($("#message").val()))) {
         return false;
     } else {
@@ -161,12 +164,10 @@ $(".first").on("input", function() {
     $(".first p").remove();
     if (error = validateName($("#first").val())) {
 		$("#first").addClass("error");
-        if (error === "*Required*") {
+        if (error === " is required.") {
             $("#first").val(""); // clean the input box to make sure placeholder is shown
-            $(".first").append(`<p>${error}</p>`);
-        } else {
-            $(".first").append(`<p>First Name: ${error}</p>`);
         }
+		$(".first").append(`<p>First Name ${error}</p>`);
     } else {
 		$("#first").removeClass("error");
 	}
@@ -176,12 +177,10 @@ $(".last").on("input", function() {
     $(".last p").remove();
     if (error = validateName($("#last").val())) {
 		$("#last").addClass("error");
-        if (error === "*Required*") {
+        if (error === " is required.") {
             $("#last").val(""); // clean the input box to make sure placeholder is shown
-            $(".last").append(`<p>${error}</p>`);
-        } else {
-            $(".last").append(`<p>Last Name: ${error}</p>`);
         }
+		$(".last").append(`<p>Last Name ${error}</p>`);
     } else {
 		$("#last").removeClass("error");
 	}
@@ -191,12 +190,10 @@ $(".email").on("input", function() {
     $(".email p").remove();
     if (error = validateEmail($("#email").val())) {
 		$("#email").addClass("error");
-        if (error === "*Required*") {
+        if (error === " is required.") {
             $("#email").val(""); // clean the input box to make sure placeholder is shown
-            $(".email").append(`<p>${error}</p>`);
-        } else {
-            $(".email").append(`<p>Email: ${error}</p>`);
         }
+		$(".email").append(`<p>Email Address ${error}</p>`);
     } else {
 		$("#email").removeClass("error");
 	}
@@ -210,7 +207,7 @@ $("#phone").on("input", function() {
             $("#phone").val("");
         } else {
 			$("#phone").addClass("error");
-            $(".phone").append(`<p>Phone Number: ${error}</p>`);
+            $(".phone").append(`<p>Phone Number ${error}</p>`);
         }
     } else {
 		$("#phone").removeClass("error");
@@ -225,7 +222,7 @@ $("#subject").on("input", function() {
             $("#subject").val("");
         } else {
 			$("#subject").addClass("error");
-            $(".subject").append(`<p>${error}</p>`);
+            $(".subject").append(`<p>Subject ${error}</p>`);
         }
     } else {
 		$("#subject").removeClass("error");
@@ -236,10 +233,10 @@ $(".message").on("input", function() {
     $(".message p").remove();
     if (error = validateMessage($("#message").val())) {
 		$("#message").addClass("error");
-        if (error === "*Required*") {
+        if (error === " is required.") {
             $("#message").val(""); // clean the input box to make sure placeholder is shown
         }
-        $(".message").append(`<p>${error}</p>`);
+        $(".message").append(`<p>Message ${error}</p>`);
     } else {
 		$("#message").removeClass("error");
 	}
@@ -247,16 +244,15 @@ $(".message").on("input", function() {
 
 // event when submit button is clicked, prevent anything from happening if it still shows "Submitted", otherwise;
 // trigger every input's focusout event to make any errors flash, then if validateButton returns true action the form-submit
-$("form").submit(function(e) {
-    $("form *").trigger("input");
-    if (validateForm()) {
-        // $(".btn-submit").css("background-color", "lightgreen").after(`<p id="successMessage">Your message has been sent!</p>`);
-		// submit here
-    } else {
-        e.preventDefault();
-		$('form [class*=error]:first').focus();
-    }
-});
+// disabled to let PHP take full control of submit validation.
+// $("form").submit(function(e) {
+//     if (validateForm()) {
+// 		submit here
+//     } else {
+//         e.preventDefault();
+// 		$('form [class*=error]:first').focus();
+//     }
+// });
 
 // ==========================================================================
 // For the code examples

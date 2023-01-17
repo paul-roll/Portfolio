@@ -10,29 +10,30 @@
         $subject = ucfirst(strtolower(trim(filter_input(INPUT_POST,"subject",FILTER_SANITIZE_SPECIAL_CHARS))));
         $message = trim(filter_input(INPUT_POST,"message",FILTER_SANITIZE_SPECIAL_CHARS));
 
-        if ($firstErr = validateName($first)) {
-            $validationErrors["first"] = [0, $firstErr];
+        // checking the truthiness of the variables not comparing them
+        if ($firstErr = validateName($first, "First")) {
+            $validationErrors["first"] = $firstErr;
         }
-        if ($lastErr = validateName($last)) {
-            $validationErrors["last"] = [0, $lastErr];
+        if ($lastErr = validateName($last, "Last")) {
+            $validationErrors["last"] = $lastErr;
         }
         if ($emailErr = validateEmail($email)) {
-            $validationErrors["email"] = [0, $emailErr];
+            $validationErrors["email"] = $emailErr;
         }
         if ($phoneErr = validatePhone($phone)) {
-            $validationErrors["phone"] = [0, $phoneErr];
+            $validationErrors["phone"] = $phoneErr;
         }
         if ($subjectErr = validateSubject($subject)) {
-            $validationErrors["subject"] = [0, $subjectErr];
+            $validationErrors["subject"] = $subjectErr;
         }
         if ($messageErr = validateMessage($message)) {
-            $validationErrors["message"] = [0, $messageErr];
+            $validationErrors["message"] = $messageErr;
         }
 
         if (!$validationErrors) {
-            echo("validation OK!");
-        } else {
-            var_dump($validationErrors);
+            // Database push here
+            $validationErrors["success"] = "Your message has been sent!";
+            $first = $last = $email = $phone = $subject = $message = "";
         }
     }
 ?>
@@ -47,13 +48,19 @@
                             <p>Email: <a class="bold" href="mailto:paul.roll@netmatters-scs.com">paul.roll@netmatters-scs.com</a></p>
                         </div>
                         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>#contact" id="contact">
-                            <label class="first"><input id="first" name="first" type="text" placeholder="First Name (Required)"></label>
-                            <label class="last"><input id="last" name="last" type="text" placeholder="Last Name (Required)"></label>
-                            <label class="email"><input id="email" name="email" type="email" placeholder="Email Address (Required)"></label>
-                            <label class="phone"><input id="phone" name="phone" type="text" placeholder="Phone Number"></label>
-                            <label class="subject"><input id="subject" name="subject" type="text" placeholder="Subject"></label>
-                            <label class="message"><textarea rows="5" id="message" name="message" placeholder="Message (Required)"></textarea></label>
+
+                            <label class="first"><input id="first" name="first" type="text" placeholder="First Name (Required)" value="<?php echo $first; ?>"<?php if(!empty($validationErrors["first"])) {echo " class='error'><p>" . $validationErrors["first"] . "</p>";}else{echo ">";} ?></label>
+                            <label class="last"><input id="last" name="last" type="text" placeholder="Last Name (Required)" value="<?php echo $last; ?>"<?php if(!empty($validationErrors["last"])) {echo " class='error'><p>" . $validationErrors["last"] . "</p>";}else{echo ">";} ?></label>
+                            <label class="email"><input id="email" name="email" type="email" placeholder="Email Address (Required)" value="<?php echo $email; ?>"<?php if(!empty($validationErrors["email"])) {echo " class='error'><p>" . $validationErrors["email"] . "</p>";}else{echo ">";} ?></label>
+                            <label class="phone"><input id="phone" name="phone" type="text" placeholder="Phone Number" value="<?php echo $phone; ?>"<?php if(!empty($validationErrors["phone"])) {echo " class='error'><p>" . $validationErrors["phone"] . "</p>";}else{echo ">";} ?></label>
+                            <label class="subject"><input id="subject" name="subject" type="text" placeholder="Subject" value="<?php echo $subject; ?>"<?php if(!empty($validationErrors["subject"])) {echo " class='error'><p>" . $validationErrors["subject"] . "</p>";}else{echo ">";} ?></label>
+                            <label class="message"><textarea rows="5" id="message" name="message" placeholder="Message (Required)"<?php if(!empty($validationErrors["message"])) {echo " class='error'";} ?>><?php echo $message; ?></textarea><?php if(!empty($validationErrors["message"])) {echo "<p>" . $validationErrors["message"] . "</p>";} ?></label>
                             <input class="btn-submit bold" type="submit" value="Submit">
+                            <?php
+                        if (!empty($validationErrors["success"])) {
+                            echo "<p id='successMessage'>" . $validationErrors["success"] . "</p>\n";
+                        }
+                    ?>
                         </form>
                     </div>
                 </div>
