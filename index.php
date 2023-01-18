@@ -16,7 +16,7 @@
                                 <img src="img/Netmatters-Reflection.jpg" alt="Netmatters Website Image">
                                 <h3>Netmatters Reflection</h3>
                                 <p class="view">View Project <i class="fa-solid fa-arrow-right"></i></p>
-                                <p>Developed and rebuilt a mirror of the Netmatters homepage using HTML, SASS and JavaScript.</p>
+                                <p>Developed and rebuilt a mirror of the Netmatters homepage using HTML, SASS, JavaScript, PHP and SQL.</p>
                                 <p>Some areas of focus were responsive design, consistent margins and cross-browser compatibility.</p>
                             </a>
                         </div>
