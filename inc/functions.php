@@ -80,3 +80,10 @@ function validateMessage($message)
         return false;
     }
 }
+
+function getUTC()
+{
+    $now = new DateTime('now', new DateTimeZone('UTC'));
+    return $now->format(DateTimeInterface::W3C);
+}
+

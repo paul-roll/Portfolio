@@ -30,7 +30,7 @@
         }
 
         if (!$validationErrors) {
-            // Database push here
+            query::insert("contact", ["first"=>$first, "last"=>$last, "email"=>$email, "phone"=>$phone, "subject"=>$subject, "message"=>$message, "datetime"=>getUTC()]);
             $validationErrors["success"] = "Your message has been sent!";
             $first = $last = $email = $phone = $subject = $message = "";
         }
