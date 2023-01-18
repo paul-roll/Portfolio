@@ -1,3 +1,10 @@
+<?php
+    spl_autoload_register(function ($class) {
+        include 'inc/' . $class . '.class.php';
+    });
+    include ("inc/functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

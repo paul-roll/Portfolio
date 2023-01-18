@@ -1,5 +1,4 @@
 <?php
-    include("inc/functions.php");
     $first = $last = $email = $phone = $subject = $message = "";
     $validationErrors = array();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
