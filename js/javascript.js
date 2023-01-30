@@ -289,6 +289,10 @@ function exampleValidateEmail(email) {
     }
 }
 
+$(".example3 form").submit(function(e) {
+    e.preventDefault();
+});
+
 $(".btn-test").on("click", function() {
     exampleValidateEmail($(".example3 input[type=email]").val());
 });
