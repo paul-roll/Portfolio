@@ -52,11 +52,17 @@ section {
 // ==========================================================================
 
 .aboutme {
+    .inline {
+        display: inline-block;
+    }
     h2 {
         margin-top: 40px;
     }
-    img {
+    .skills {
         max-width: 100%;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
     }
     @media (min-width: $breakpoint-md) {
         .flex {
@@ -65,16 +71,9 @@ section {
         p {
             max-width: 90%;
         }
-        img {
-            float: right;
-            max-width: 50%;
-            margin-top: -75px;
-            padding-left: 10px;
-        }
-    }
-    @media (min-width: $breakpoint-lg) {
-        img {
-            margin-top: -120px;
+        .picture {
+            max-width: 90%;
+            display: block;
         }
     }
 }
