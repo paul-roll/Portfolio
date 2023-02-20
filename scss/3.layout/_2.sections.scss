@@ -59,8 +59,11 @@ section {
         max-width: 100%;
     }
     @media (min-width: $breakpoint-md) {
+        .flex {
+            display: flex;
+        }
         p {
-            max-width: 50%;
+            max-width: 90%;
         }
         img {
             float: right;
