@@ -36,13 +36,13 @@
                                 <img src="img/Laravel-Reflection.jpg" alt="Laravel Project Image">
                                 <h3>Laravel Reflection</h3>
                                 <p class="view">View Project <i class="fa-solid fa-arrow-right"></i></p>
-                                <p>TODO...</p>
-                                <p>TODO...</p>
+                                <p>Created an admin system using Laravel for managing companies and employees.</p>
+                                <p>Demonstrating CRUD functionality through RESTful controllers, authentication and validation.</p>
                             </a>
                         </div>
 
                         <div class="placeholder hidden show-md hide-lg">
-                            
+
                         </div>
 
                     </div>
