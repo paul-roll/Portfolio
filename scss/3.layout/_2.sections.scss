@@ -103,7 +103,7 @@ section {
         h2 {
             text-align: left;
         }
-        > * { // flex items
+        > *:not(.placeholder) { // flex items
             position: relative;
             transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
             border: 1px solid rgba($color-primary, 0.25);
