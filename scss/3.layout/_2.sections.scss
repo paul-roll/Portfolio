@@ -169,6 +169,11 @@ section {
     p {
         padding: 0 10px;
     }
+    img {
+        @media (max-width: $breakpoint-lg) {
+            width: 100%;
+        }
+    }
 }
 
 .example1{
@@ -329,11 +334,6 @@ section {
 }
 
 .example4 {
-    img {
-        @media (max-width: $breakpoint-lg) {
-            width: 100%;
-        }
-    }
     table {
         margin: 10px;
     }
