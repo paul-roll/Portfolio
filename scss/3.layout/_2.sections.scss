@@ -52,26 +52,28 @@ section {
 // ==========================================================================
 
 .aboutme {
+    .inline {
+        display: inline-block;
+    }
     h2 {
         margin-top: 40px;
     }
-    img {
+    .skills {
         max-width: 100%;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
     }
     @media (min-width: $breakpoint-md) {
+        .flex {
+            display: flex;
+        }
         p {
-            max-width: 50%;
+            max-width: 90%;
         }
-        img {
-            float: right;
-            max-width: 50%;
-            margin-top: -75px;
-            padding-left: 10px;
-        }
-    }
-    @media (min-width: $breakpoint-lg) {
-        img {
-            margin-top: -120px;
+        .picture {
+            max-width: 90%;
+            display: block;
         }
     }
 }
@@ -90,6 +92,7 @@ section {
 
         img {
             width: 100%;
+            border-bottom: 1px solid rgba($color-primary, 0.25);
         }
         h3, p {
             margin: 0 10px;
@@ -103,7 +106,7 @@ section {
         h2 {
             text-align: left;
         }
-        > * { // flex items
+        > *:not(.placeholder) { // flex items
             position: relative;
             transition: scale 0.5s, transform 0.5s, top 0.5s, box-shadow 0.5s;
             border: 1px solid rgba($color-primary, 0.25);
