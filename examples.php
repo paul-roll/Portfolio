@@ -218,8 +218,9 @@ ORDER BY rating."Average Rating" DESC</code></pre>
 
 
                     <div>
-                        <p class="bold">Laravel Reflection:<br>Search Function</p>
+                        <p class="bold">Laravel Reflection:<br>Employee Search Route</p>
                         <p>PHP</p>
+                        <p>The Laravel route for employee searches, which generates a collection of employees for the employee.index view to display.</p>
                         <pre><code class="php">public function search()
 {
     $search = Request::get('q');
