@@ -67,23 +67,23 @@ $box-width: 240px;
                             </div>
                             <pre><code class="language-scss">// Maps
 $service-colors: (
-    'bespoke-software':         #67809F,        // hoki
-    'it-support':                     #4183D7,        // havelock-blue
-    'digital-marketing':        #2ECC71,        // shamrock
-    'telecoms-services':        #D64541,        // valencia
-    'web-design':                     #926FB1,        // wisteria
-    'cyber-security':             #F62459,        // radical-red
-    'developer-course':         #CE4125,        // punch
+    'bespoke-software':     #67809F,    // hoki
+    'it-support':           #4183D7,    // havelock-blue
+    'digital-marketing':    #2ECC71,    // shamrock
+    'telecoms-services':    #D64541,    // valencia
+    'web-design':           #926FB1,    // wisteria
+    'cyber-security':       #F62459,    // radical-red
+    'developer-course':     #CE4125,    // punch
 );
 
 $service-icons: (
-    'bespoke-software':         "\f58e",        // grip-vertical
-    'it-support':                     "\e163",        // display
-    'digital-marketing':        "\f201",        // chart-line
-    'telecoms-services':        "\f2a0",        // phone-volume
-    'web-design':                     "\f121",        // code
-    'cyber-security':             "\f3ed",        // shield-halved
-    'developer-course':         "\f19d",        // graduation-cap
+    'bespoke-software':     "\f58e",    // grip-vertical
+    'it-support':           "\e163",    // display
+    'digital-marketing':    "\f201",    // chart-line
+    'telecoms-services':    "\f2a0",    // phone-volume
+    'web-design':           "\f121",    // code
+    'cyber-security':       "\f3ed",    // shield-halved
+    'developer-course':     "\f19d",    // graduation-cap
 );</code></pre>
                         <p>A map of key-pairs to make the values easier to work with and ensure that they are never defined more than once.</p>
                         <pre><code class="language-scss">@mixin icon($service, $font-size) {
