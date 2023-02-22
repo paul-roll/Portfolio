@@ -20,11 +20,11 @@ $(".banner h2").textillate({
 });
 
 // Triggers to re-animate banner text
-$(".btn-footer").on("click", function() {
+$(".btn-footer").on("click", function () {
     $(".banner h1").textillate("in");
     $(".banner h2").textillate("in");
 });
-$(".sidebar h1").on("click", function() {
+$(".sidebar h1").on("click", function () {
     $(".banner h1").textillate("in");
     $(".banner h2").textillate("in");
 });
@@ -36,20 +36,20 @@ $(".sidebar h1").on("click", function() {
 
 // slide the sidebar and flip the classes
 function sidebarSlideIn() {
-    $(".sidebar").stop().css("left", "-200px").removeClass("hidden").animate({left: "+=200"}, 500, function() {
+    $(".sidebar").stop().css("left", "-200px").removeClass("hidden").animate({ left: "+=200" }, 500, function () {
         $(".sidebar").css("left", "");
     });
     $(".wrapper").addClass("wrapper-nav").removeClass("wrapper");
 }
 function sidebarSlideOut() {
-    $(".sidebar").stop().animate({left: "-=200"}, 500, function() {
+    $(".sidebar").stop().animate({ left: "-=200" }, 500, function () {
         $(".sidebar").css("left", "").addClass("hidden");
     });
     $(".wrapper-nav").addClass("wrapper").removeClass("wrapper-nav");
 }
 
 // btn-burger button click 
-$(".btn-burger").on("click", function() {
+$(".btn-burger").on("click", function () {
     if ($(".sidebar").hasClass("hidden")) {
         sidebarSlideIn();
     } else {
@@ -59,7 +59,7 @@ $(".btn-burger").on("click", function() {
 
 // catch all scroll and click events to dismiss sidebar on screen widths under 768
 // exclude clicks on btn-burger
-$(window).on("click scroll", function(event) {
+$(window).on("click scroll", function (event) {
     if ((!$(event.target).hasClass("btn-burger")) && (!$(".sidebar").hasClass("hidden")) && ($(window).outerWidth() < 768)) {
         sidebarSlideOut();
     }
@@ -67,12 +67,12 @@ $(window).on("click scroll", function(event) {
 
 // catch resize events, track changes in screen width so that the functions only fire a single time
 let prevWidth = $(window).outerWidth();
-$(window).on("resize", function() {
-        if ((prevWidth < 768) && ($(window).outerWidth() >= 768)) {
-            sidebarSlideIn();
-        } else if ((prevWidth >= 768) && ($(window).outerWidth() < 768)) {
-            sidebarSlideOut();
-        }
+$(window).on("resize", function () {
+    if ((prevWidth < 768) && ($(window).outerWidth() >= 768)) {
+        sidebarSlideIn();
+    } else if ((prevWidth >= 768) && ($(window).outerWidth() < 768)) {
+        sidebarSlideOut();
+    }
     prevWidth = $(window).outerWidth();
 });
 
@@ -83,7 +83,7 @@ $(window).on("resize", function() {
 
 // Validation functions for each input type, returns error message or empty string when valid, for non-required "null" triggers whitespace clearing
 function validateName(s) {
-    s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
+    s = s.replace(/^\s+|\s+$/gm, ''); // remove starting and trailing spaces
     if (!s) {
         return " is required.";
     } else if (!s.match(/^[a-zA-Z-']*$/)) {    // Must use only letter / hyphen / Apostrophe
@@ -99,22 +99,22 @@ function validateName(s) {
     }
 }
 function validateEmail(s) {
-//
-s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
-if (!s) {
-    return " is required.";
-} else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {     // valid characters in email
-    return " contains invalid characters.";
-} else if (s.length > 254) {    // At most 254 characters
-    return " is too long.";
-} else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {     // Far from perfect, catches the general format of emails
-    return " is invalid.";
-} else {
-    return ""; // valid
-}
+    //
+    s = s.replace(/^\s+|\s+$/gm, ''); // remove starting and trailing spaces
+    if (!s) {
+        return " is required.";
+    } else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {     // valid characters in email
+        return " contains invalid characters.";
+    } else if (s.length > 254) {    // At most 254 characters
+        return " is too long.";
+    } else if (!s.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {     // Far from perfect, catches the general format of emails
+        return " is invalid.";
+    } else {
+        return ""; // valid
+    }
 }
 function validatePhone(s) {
-    s = s.replace(/-+|\s+/gm,''); // remove ALL spaces and hypens
+    s = s.replace(/-+|\s+/gm, ''); // remove ALL spaces and hypens
     if (!s) {
         return "null";
     } else if (!s.match(/^[0-9]*$/)) {
@@ -128,20 +128,20 @@ function validatePhone(s) {
     }
 }
 function validateSubject(s) {
-    s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
+    s = s.replace(/^\s+|\s+$/gm, ''); // remove starting and trailing spaces
     if (!s) {
         return "null";
-	} else if (s.length > 254) {    // At most 254 characters
-		return " is too long.";
+    } else if (s.length > 254) {    // At most 254 characters
+        return " is too long.";
     } else {
         return ""; // valid
     }
 }
 function validateMessage(s) {
-    s = s.replace(/^\s+|\s+$/gm,''); // remove starting and trailing spaces
+    s = s.replace(/^\s+|\s+$/gm, ''); // remove starting and trailing spaces
     if (!s) {
         return " is required.";
-	} else if (s.length < 5) {
+    } else if (s.length < 5) {
         return " is too short.";
     } else {
         return ""; // valid
@@ -151,7 +151,7 @@ function validateMessage(s) {
 // function to check all form fields and update the submit button
 // returns false if any of the fields return an error message (with the exception that "null" on phone/subject don't count)
 function validateForm() {
-	$("form *").trigger("input");
+    $("form *").trigger("input");
     if ((validateName($("#first").val())) || (validateName($("#last").val())) || (validateEmail($("#email").val())) || ((validatePhone($("#phone").val())) && (validatePhone($("#phone").val()) !== "null")) || ((validateSubject($("#subject").val())) && (validateSubject($("#subject").val()) !== "null")) || (validateMessage($("#message").val()))) {
         return false;
     } else {
@@ -160,86 +160,86 @@ function validateForm() {
 }
 
 // Events that trigger when each input content changes
-$(".first").on("input", function() {
+$(".first").on("input", function () {
     $(".first p").remove();
     if (error = validateName($("#first").val())) {
-		$("#first").addClass("error");
+        $("#first").addClass("error");
         if (error === " is required.") {
             $("#first").val(""); // clean the input box to make sure placeholder is shown
         }
-		$(".first").append(`<p>First Name ${error}</p>`);
+        $(".first").append(`<p>First Name ${error}</p>`);
     } else {
-		$("#first").removeClass("error");
-	}
+        $("#first").removeClass("error");
+    }
 });
 
-$(".last").on("input", function() {
+$(".last").on("input", function () {
     $(".last p").remove();
     if (error = validateName($("#last").val())) {
-		$("#last").addClass("error");
+        $("#last").addClass("error");
         if (error === " is required.") {
             $("#last").val(""); // clean the input box to make sure placeholder is shown
         }
-		$(".last").append(`<p>Last Name ${error}</p>`);
+        $(".last").append(`<p>Last Name ${error}</p>`);
     } else {
-		$("#last").removeClass("error");
-	}
+        $("#last").removeClass("error");
+    }
 });
 
-$(".email").on("input", function() {
+$(".email").on("input", function () {
     $(".email p").remove();
     if (error = validateEmail($("#email").val())) {
-		$("#email").addClass("error");
+        $("#email").addClass("error");
         if (error === " is required.") {
             $("#email").val(""); // clean the input box to make sure placeholder is shown
         }
-		$(".email").append(`<p>Email Address ${error}</p>`);
+        $(".email").append(`<p>Email Address ${error}</p>`);
     } else {
-		$("#email").removeClass("error");
-	}
+        $("#email").removeClass("error");
+    }
 });
 
-$("#phone").on("input", function() {
+$("#phone").on("input", function () {
     $(".phone p").remove();
     if (error = validatePhone($("#phone").val())) {
         if (error === "null") {     // clean the input box to make sure placeholder is shown
-			$("#phone").removeClass("error");
+            $("#phone").removeClass("error");
             $("#phone").val("");
         } else {
-			$("#phone").addClass("error");
+            $("#phone").addClass("error");
             $(".phone").append(`<p>Phone Number ${error}</p>`);
         }
     } else {
-		$("#phone").removeClass("error");
-	}
+        $("#phone").removeClass("error");
+    }
 });
 
-$("#subject").on("input", function() {
+$("#subject").on("input", function () {
     $(".subject p").remove();
     if (error = validateSubject($("#subject").val())) {
         if (error === "null") {     // clean the input box to make sure placeholder is shown
-			$("#subject").removeClass("error");
+            $("#subject").removeClass("error");
             $("#subject").val("");
         } else {
-			$("#subject").addClass("error");
+            $("#subject").addClass("error");
             $(".subject").append(`<p>Subject ${error}</p>`);
         }
     } else {
-		$("#subject").removeClass("error");
-	}
+        $("#subject").removeClass("error");
+    }
 });
 
-$(".message").on("input", function() {
+$(".message").on("input", function () {
     $(".message p").remove();
     if (error = validateMessage($("#message").val())) {
-		$("#message").addClass("error");
+        $("#message").addClass("error");
         if (error === " is required.") {
             $("#message").val(""); // clean the input box to make sure placeholder is shown
         }
         $(".message").append(`<p>Message ${error}</p>`);
     } else {
-		$("#message").removeClass("error");
-	}
+        $("#message").removeClass("error");
+    }
 });
 
 // event when submit button is clicked, prevent anything from happening if it still shows "Submitted", otherwise;
@@ -262,38 +262,38 @@ $(".message").on("input", function() {
 let messageBusy = false;
 function showMessage(message) {
     if (!messageBusy) {
-		messageBusy = true;
-		$("#popup").html(message);
-		$("#popup").slideDown(500).delay(2000).slideUp(500, function() {
-			messageBusy = false;
-		});
+        messageBusy = true;
+        $("#popup").html(message);
+        $("#popup").slideDown(500).delay(2000).slideUp(500, function () {
+            messageBusy = false;
+        });
     }
 }
 
 // return true when email validates OK
 function exampleValidateEmail(email) {
     if (!email) {
-		showMessage("An Email Is Required");
-		return false;
+        showMessage("An Email Is Required");
+        return false;
     } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?@^_`{|}~]*$/)) {     // Invalid characters in email
-		showMessage("Invalid Characters In Email");
-		return false;
+        showMessage("Invalid Characters In Email");
+        return false;
     } else if (email.length > 254) {    // At most 254 Characters
-		showMessage("Email Is Too Long");
-		return false;
+        showMessage("Email Is Too Long");
+        return false;
     } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {     // Far from perfect, catches the general format of emails
-		showMessage("Invalid Email");
+        showMessage("Invalid Email");
     } else {
         return true;
     }
 }
 
-$(".example3 form").submit(function(e) {
+$(".example3 form").submit(function (e) {
     e.preventDefault();
 });
 
-$(".btn-test").on("click", function() {
-    if(exampleValidateEmail($(".example3 input[type=email]").val())) {
+$(".btn-test").on("click", function () {
+    if (exampleValidateEmail($(".example3 input[type=email]").val())) {
         alert(`Usually code for a successful validation would execute now...\nValidated: ${$(".example3 input[type=email]").val()}`);
         $(".example3 input[type=email]").val("");
     }
@@ -304,7 +304,7 @@ $(".btn-test").on("click", function() {
 // Page Load Complete
 // ==========================================================================
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     // start the sidebar out if screen is wider than 768
     if ($(window).outerWidth() >= 768) {
@@ -315,7 +315,7 @@ $(document).ready(function() {
     // Start banner animations
     $(".banner h1").textillate("start");
     $(".banner h2").textillate("start");
-    
+
 
 
 });
