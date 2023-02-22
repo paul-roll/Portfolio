@@ -284,8 +284,7 @@ function exampleValidateEmail(email) {
     } else if (!email.match(/^[a-zA-Z0-9-!#$%&'*+.\/=?^_`{|}~]+@[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}$/)) {     // Far from perfect, catches the general format of emails
 		showMessage("Invalid Email");
     } else {
-        showMessage("Example Validated OK"); //Just for this example
-            return true;
+        return true;
     }
 }
 
@@ -294,7 +293,10 @@ $(".example3 form").submit(function(e) {
 });
 
 $(".btn-test").on("click", function() {
-    exampleValidateEmail($(".example3 input[type=email]").val());
+    if(exampleValidateEmail($(".example3 input[type=email]").val())) {
+        alert(`Usually code for a successful validation would execute now...\nValidated: ${$(".example3 input[type=email]").val()}`);
+        $(".example3 input[type=email]").val("");
+    }
 });
 
 

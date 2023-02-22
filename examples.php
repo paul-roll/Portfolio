@@ -169,7 +169,6 @@ function validateEmail(email) {
             showMessage("Invalid Email");
     // No problems
     } else {
-        showMessage("Example Validated OK"); // Added for this example
         return true;
     }
 }</code></pre>
