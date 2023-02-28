@@ -46,7 +46,7 @@
                             <p>Tel: <a class="bold" href="tel:07884441688">0788 444 1688</a></p>
                             <p>Email: <a class="bold" href="mailto:paul.roll@netmatters-scs.com">paul.roll@netmatters-scs.com</a></p>
                         </div>
-                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>#contact" id="contact">
+                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>#contact">
 
                             <label class="first"><input id="first" name="first" type="text" placeholder="First Name (Required)" value="<?php echo $first; ?>"<?php if(!empty($validationErrors["first"])) {echo " class='error'><p>" . $validationErrors["first"] . "</p>";}else{echo ">";} ?></label>
                             <label class="last"><input id="last" name="last" type="text" placeholder="Last Name (Required)" value="<?php echo $last; ?>"<?php if(!empty($validationErrors["last"])) {echo " class='error'><p>" . $validationErrors["last"] . "</p>";}else{echo ">";} ?></label>

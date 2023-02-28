@@ -131,7 +131,7 @@ $service-icons: (
                         <div class="example3 bold">
                             <p>Example</p>
                             <form>
-                                <input type="email" placeholder="Email"/><input class="btn-test" type="submit" value="Test"/>
+                                <input type="email" placeholder="Email"><input class="btn-test" type="submit" value="Test">
                             </form>
                             <div>
 
