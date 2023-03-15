@@ -44,7 +44,7 @@
                             <h3>Get In Touch</h3>
                             <p>Feel free to contact me by telephone or email and I will be sure to get back to you as soon as possible.</p>
                             <p>Tel: <a class="bold" href="tel:07884441688">0788 444 1688</a></p>
-                            <p>Email: <a class="bold" href="mailto:paul.roll@netmatters-scs.com">paul.roll@netmatters-scs.com</a></p>
+                            <p>Email: <a class="bold" href="mailto:paulroll@hotmail.com">paulroll@hotmail.com</a></p>
                         </div>
                         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>#contact">
 
